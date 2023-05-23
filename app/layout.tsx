@@ -10,13 +10,16 @@ export default function RootLayout({
     return (
         <html lang="en">
         <Head/>
+        <body>
         <header>
             <nav>
                 <Link href="/">Accueil</Link>--
-                <Link href="/login">Connexion</Link>
+                <Link href="/login">Connexion</Link>--
+                <Link href="/contact">Contact</Link>
             </nav>
         </header>
-        <body>{children}</body>
+        {children}
+        </body>
         </html>
     )
 }

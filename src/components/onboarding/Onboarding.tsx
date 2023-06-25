@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import {Concept} from "./concept/Concept";
 import styles from './onboarding.module.css'
 import {NavigationButtons} from "./navigateButtons/NavigationButtons";
+import {SkipButton} from "./skipButton/SkipButton";
 
 export const Onboarding: React.FC = () => {
     const firstVisit = !Boolean(localStorage.getItem('displayOnboarding'));
@@ -12,11 +13,6 @@ export const Onboarding: React.FC = () => {
     useEffect(() => {
         firstVisit ? setDisplayOnboarding(true) : setDisplayOnboarding(false)
     }, [displayOnboarding])
-
-    const handleClickSkip = () => {
-        localStorage.setItem('displayOnboarding', 'false');
-        setDisplayOnboarding(false);
-    }
 
     return (
         <>
@@ -29,8 +25,7 @@ export const Onboarding: React.FC = () => {
                                 UNCOVER
                             </div>
                             <Concept/>
-                            <button type="button" className={styles.skipButton} onClick={handleClickSkip}>Passer
-                            </button>
+                            <SkipButton setDisplayOnboarding={setDisplayOnboarding}/>
                         </div>
                     )}
                     {displayedSlide === 2 && (
@@ -39,8 +34,7 @@ export const Onboarding: React.FC = () => {
                                 UNCOVER 2
                             </div>
                             <Concept/>
-                            <button type="button" className={styles.skipButton} onClick={handleClickSkip}>Passer
-                            </button>
+                            <SkipButton setDisplayOnboarding={setDisplayOnboarding}/>
                         </div>
                     )}
                     {displayedSlide === 3 && (
@@ -49,8 +43,7 @@ export const Onboarding: React.FC = () => {
                                 UNCOVER 3
                             </div>
                             <Concept/>
-                            <button type="button" className={styles.skipButton} onClick={handleClickSkip}>Passer
-                            </button>
+                            <SkipButton setDisplayOnboarding={setDisplayOnboarding}/>
                         </div>
                     )}
                 </div>

@@ -4,6 +4,8 @@ import {Concept} from "./concept/Concept";
 import styles from './onboarding.module.css'
 import {NavigationButtons} from "./navigateButtons/NavigationButtons";
 import {SkipButton} from "./skipButton/SkipButton";
+import {TravelingReason} from "./travelingReason/TravelingReason";
+import {EstimatedKnowledges} from "./estimatedKnowledges/EstimatedKnowledges";
 
 export const Onboarding: React.FC = () => {
     const firstVisit = !Boolean(localStorage.getItem('displayOnboarding'));
@@ -33,7 +35,7 @@ export const Onboarding: React.FC = () => {
                             <div className={styles.heading}>
                                 UNCOVER 2
                             </div>
-                            <Concept/>
+                            <TravelingReason/>
                             <SkipButton setDisplayOnboarding={setDisplayOnboarding}/>
                         </div>
                     )}
@@ -42,7 +44,7 @@ export const Onboarding: React.FC = () => {
                             <div className={styles.heading}>
                                 UNCOVER 3
                             </div>
-                            <Concept/>
+                            <EstimatedKnowledges setDisplayOnboarding={setDisplayOnboarding}/>
                             <SkipButton setDisplayOnboarding={setDisplayOnboarding}/>
                         </div>
                     )}

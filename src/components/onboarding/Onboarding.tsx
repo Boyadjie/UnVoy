@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from "react";
 import {Concept} from "./concept/Concept";
 import styles from './onboarding.module.css'
+import {NavigationButtons} from "./navigateButtons/NavigationButtons";
 
 export const Onboarding: React.FC = () => {
     const firstVisit = !Boolean(localStorage.getItem('displayOnboarding'));
@@ -21,15 +22,37 @@ export const Onboarding: React.FC = () => {
         <>
             {displayOnboarding && (
                 <div className={styles.container}>
-                    <div className={styles.card}>
-                        <div className={styles.heading}>
-                            UNCOVER
-                        </div>
-                        {displayedSlide === 1 && (
+                    <NavigationButtons displayedSlide={displayedSlide} setDisplayedSlide={setDisplayedSlide}/>
+                    {displayedSlide === 1 && (
+                        <div className={styles.card}>
+                            <div className={styles.heading}>
+                                UNCOVER
+                            </div>
                             <Concept/>
-                        )}
-                        <button type="button" className={styles.skipButton} onClick={handleClickSkip}>Passer</button>
-                    </div>
+                            <button type="button" className={styles.skipButton} onClick={handleClickSkip}>Passer
+                            </button>
+                        </div>
+                    )}
+                    {displayedSlide === 2 && (
+                        <div className={styles.card}>
+                            <div className={styles.heading}>
+                                UNCOVER 2
+                            </div>
+                            <Concept/>
+                            <button type="button" className={styles.skipButton} onClick={handleClickSkip}>Passer
+                            </button>
+                        </div>
+                    )}
+                    {displayedSlide === 3 && (
+                        <div className={styles.card}>
+                            <div className={styles.heading}>
+                                UNCOVER 3
+                            </div>
+                            <Concept/>
+                            <button type="button" className={styles.skipButton} onClick={handleClickSkip}>Passer
+                            </button>
+                        </div>
+                    )}
                 </div>
             )}
         </>

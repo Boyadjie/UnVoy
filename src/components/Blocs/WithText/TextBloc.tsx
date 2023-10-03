@@ -2,7 +2,7 @@ type TextType = {
     content: string | string[];
 }
 
-export const Text: React.FC<TextType> = ({content}) => {
+export const TextBloc: React.FC<TextType> = ({content}) => {
     if (typeof content !== "string") {
         return (
             <div>

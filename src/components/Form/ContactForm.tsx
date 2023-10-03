@@ -1,6 +1,7 @@
 'use client'
 
 import {useState} from 'react';
+
 import {Input} from "./Inputs/InputManager";
 
 type FormValues = {
@@ -27,8 +28,6 @@ export const ContactForm: React.FC = () => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
-        console.log('Form Values:', formValues);
     };
 
     return (

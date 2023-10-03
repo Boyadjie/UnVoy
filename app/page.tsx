@@ -1,5 +1,5 @@
-import styles from './page.module.css'
 import {Onboarding} from "../src/components/onboarding/Onboarding";
+import styles from './page.module.css'
 
 export default function Home() {
 

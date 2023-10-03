@@ -1,6 +1,7 @@
 import './globals.css'
-import Head from './Head'
 import Link from "next/link";
+
+import Head from './Head'
 
 export default function RootLayout({
                                        children,

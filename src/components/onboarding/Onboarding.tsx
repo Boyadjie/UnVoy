@@ -1,11 +1,12 @@
 'use client'
 import React, {useEffect, useState} from "react";
+
 import {Concept} from "./concept/Concept";
-import styles from './onboarding.module.css'
+import {EstimatedKnowledges} from "./estimatedKnowledges/EstimatedKnowledges";
 import {NavigationButtons} from "./navigateButtons/NavigationButtons";
+import styles from './onboarding.module.css'
 import {SkipButton} from "./skipButton/SkipButton";
 import {TravelingReason} from "./travelingReason/TravelingReason";
-import {EstimatedKnowledges} from "./estimatedKnowledges/EstimatedKnowledges";
 
 export const Onboarding: React.FC = () => {
     const firstVisit = !Boolean(localStorage.getItem('displayOnboarding'));
@@ -14,7 +15,7 @@ export const Onboarding: React.FC = () => {
 
     useEffect(() => {
         firstVisit ? setDisplayOnboarding(true) : setDisplayOnboarding(false)
-    }, [displayOnboarding])
+    }, [displayOnboarding, firstVisit])
 
     return (
         <>

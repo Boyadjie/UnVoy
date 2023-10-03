@@ -1,5 +1,5 @@
-import {Text} from "./InputText";
 import {Email} from "./InputMail";
+import {Text} from "./InputText";
 import {Textarea} from "./InputTextArea";
 
 type InputType = 'text' | 'email' | 'textarea';

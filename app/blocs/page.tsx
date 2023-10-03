@@ -1,6 +1,6 @@
-import styles from './page.module.css'
-import {TextBloc} from "../../src/components/Blocs/WithText/TextBloc";
 import {TextAndImg} from "../../src/components/Blocs/WithText/TextAndImg";
+import {TextBloc} from "../../src/components/Blocs/WithText/TextBloc";
+import styles from './page.module.css'
 
 export default function Home() {
 

@@ -1,0 +1,52 @@
+name: 🚧 Integration
+on:
+  pull_request:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  test:
+    name: 🧪 Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: pnpm/action-setup@v2.4.0
+        name: Install pnpm
+        with:
+          version: 7
+      - uses: actions/setup-node@main
+        with:
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --prefer-offline
+      - run: pnpm run test
+
+  format:
+    name: 💅 Check format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: pnpm/action-setup@v2.4.0
+        name: Install pnpm
+        with:
+          version: 7
+      - uses: actions/setup-node@main
+        with:
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --prefer-offline
+      - run: pnpm prettier --check .
+
+  nextjs:
+    name: ⚛️ NextJS application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: pnpm/action-setup@v2.4.0
+        name: Install pnpm
+        with:
+          version: 7
+      - uses: actions/setup-node@main
+        with:
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --prefer-offline
+      - run: pnpm build

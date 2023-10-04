@@ -1,37 +1,37 @@
 {
-	"extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
-	"parser": "@typescript-eslint/parser",
-	"globals": {
-		"process": true
-	},
-	"rules": {
-		"no-console": [
-			"error",
-			{
-				"allow": ["warn", "error"]
-			}
-		],
-		"@typescript-eslint/no-unused-vars": "error",
-		"@typescript-eslint/no-empty-function": "off",
-		"no-unused-vars": "off",
-		"import/order": [
-			"error",
-			{
-				"groups": ["builtin", "external", "internal"],
-				"pathGroups": [
-					{
-						"pattern": "react",
-						"group": "external",
-						"position": "before"
-					}
-				],
-				"pathGroupsExcludedImportTypes": ["react"],
-				"newlines-between": "always",
-				"alphabetize": {
-					"order": "asc",
-					"caseInsensitive": true
-				}
-			}
-		]
-	}
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "globals": {
+    "process": true
+  },
+  "rules": {
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "no-unused-vars": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  }
 }

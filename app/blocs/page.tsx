@@ -1,5 +1,5 @@
-import {TextAndImg} from '../../src/components/Blocs/WithText/TextAndImg';
-import {TextBloc} from '../../src/components/Blocs/WithText/TextBloc';
+import {TextAndImg} from '../../src/components/blocs/withText/TextAndImg';
+import {TextBloc} from '../../src/components/blocs/withText/TextBloc';
 import styles from './page.module.css';
 
 export default function Home() {

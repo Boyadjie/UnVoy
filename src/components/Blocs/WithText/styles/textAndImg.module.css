@@ -3,6 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   height: max-content;
+  gap: 2rem;
 
   &.pictureRight {
     .picture {
@@ -34,18 +35,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 6rem 7rem;
 
       > div {
         width: 100%;
 
         h3 {
           position: relative;
-          padding-bottom: 6.5rem;
+          padding-bottom: 2.5rem;
           margin-bottom: 2.5rem;
-          font-size: var(--fs-section-title);
-          font-weight: var(--bold);
-          color: var(--color-primary);
+          color: black;
+          font-weight: bold;
 
           &::after {
             content: '';
@@ -54,29 +53,21 @@
             height: 3px;
             left: 0;
             bottom: 0;
-            background: var(--color-primary);
             border-radius: 50px;
+            background: black;
           }
         }
 
         h2 {
-          font-size: var(--fs-section-subtitle);
-          font-weight: var(--bold);
           margin-bottom: 2.5rem;
+          font-weight: bold;
         }
 
         .mainContent {
-          p,
-          a {
-            font-size: var(--fs-text);
-            font-weight: var(--medium);
-          }
-
           p {
             strong {
-              font-size: var(--fs-text);
-              color: var(--color-primary);
-              font-weight: var(--bold);
+              color: black;
+              font-weight: bold;
             }
 
             &:not(:last-child) {

@@ -6,5 +6,5 @@
 
 echo "⚠️ Run eslint fix"
 pnpm lint --fix
-echo "⚠️ Run prettier fix"
+echo "🎨 Run prettier fix"
 pnpm style

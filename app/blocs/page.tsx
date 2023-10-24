@@ -11,6 +11,16 @@ export default function Home() {
 
 			<section className={styles.blocListContainer}>
 				<div>
+					<h3>Titles</h3>
+					<div>
+						<div>
+							<Title>This is a Title</Title>
+							<SubTitle>This is a Sub Title</SubTitle>
+						</div>
+					</div>
+				</div>
+
+				<div>
 					<h3>Text Bloc</h3>
 					<div>
 						<TextBloc content="This is a text" />
@@ -39,17 +49,6 @@ export default function Home() {
 							title="This is a title"
 							subtitle="This is a subtitle here to support the title"
 						/>
-					</div>
-				</div>
-
-				<div>
-					<h3>Titles</h3>
-
-					<div>
-						<div>
-							<Title>This is a Title</Title>
-							<SubTitle>This is a Sub Title</SubTitle>
-						</div>
 					</div>
 				</div>
 			</section>

@@ -1,0 +1,13 @@
+h1.title, h2.subTitle {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+h1.title {
+  font-size: 2.5rem;
+}
+
+h2.subTitle {
+  font-size: 1.6rem;
+}

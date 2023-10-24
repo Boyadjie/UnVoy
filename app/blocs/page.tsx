@@ -1,5 +1,7 @@
+import {SubTitle} from '../../src/components/blocs/withText/SubTitle';
 import {TextAndImg} from '../../src/components/blocs/withText/TextAndImg';
 import {TextBloc} from '../../src/components/blocs/withText/TextBloc';
+import {Title} from '../../src/components/blocs/withText/Title';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -37,6 +39,17 @@ export default function Home() {
 							title="This is a title"
 							subtitle="This is a subtitle here to support the title"
 						/>
+					</div>
+				</div>
+
+				<div>
+					<h3>Titles</h3>
+
+					<div>
+						<div>
+							<Title>This is a Title</Title>
+							<SubTitle>This is a Sub Title</SubTitle>
+						</div>
 					</div>
 				</div>
 			</section>

@@ -9,7 +9,10 @@ import {SkipButton} from './skipButton/SkipButton';
 import {TravelingReason} from './travelingReason/TravelingReason';
 
 export const Onboarding: React.FC = () => {
-  const firstVisit = !Boolean(localStorage.getItem('displayOnboarding'));
+  const firstVisit =
+    typeof window !== 'undefined'
+      ? !Boolean(localStorage.getItem('displayOnboarding'))
+      : true;
   const [displayOnboarding, setDisplayOnboarding] = useState<boolean>(false);
   const [displayedSlide, setDisplayedSlide] = useState<number>(1);
 

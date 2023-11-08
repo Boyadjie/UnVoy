@@ -1,10 +1,10 @@
 import {render, screen} from '@testing-library/react';
 
-import {Title} from '../src/components/title';
+import {Title} from '../../src/components/blocs/withText/Title';
 
 describe('<Title />', () => {
-  it('Loads and display the atom "Title"', () => {
-    render(<Title />);
+  it('Should loads and display the atom "Title"', () => {
+    render(<Title>This is a title</Title>);
 
     const title = screen.getByRole('heading');
 

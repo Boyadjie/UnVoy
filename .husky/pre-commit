@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "⚠️ Run eslint fix"
+pnpm lint --fix
+echo "🎨 Run prettier fix"
+pnpm style

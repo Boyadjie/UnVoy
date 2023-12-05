@@ -1,5 +1,11 @@
 :root {
   --max-width: 1100px;
+
+  /* Colors */
+  --primary: #00969F;
+  --primary-light: #ECF7F4;
+
+  --secondary: #FF8A44;
 }
 
 * {

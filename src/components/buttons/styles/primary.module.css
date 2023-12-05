@@ -2,7 +2,7 @@
   background: var(--primary);
   border: 2px solid var(--primary);
   color: white;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     background: white;

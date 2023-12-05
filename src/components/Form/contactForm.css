@@ -1,0 +1,55 @@
+Style général du formulaire
+form {
+    background-color: #f3f3f3; /* Couleur de fond */
+    padding: 20px; /* Espace intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre */
+    max-width: 400px; /* Largeur maximale */
+    margin: auto; /* Centrage */
+  }
+  
+  /* Style des divs contenant les inputs */
+  form div {
+    margin-bottom: 15px; /* Espace entre les champs */
+  }
+  
+  /* Style des labels */
+  label {
+    display: block; /* Labels sur leur propre ligne */
+    margin-bottom: 5px; /* Espace entre le label et l'input */
+    font-weight: bold; /* Texte en gras */
+  }
+  
+  /* Style des champs de saisie et de la zone de texte */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%; /* Largeur complète */
+    padding: 8px; /* Espace intérieur */
+    border: 1px solid #ddd; /* Bordure */
+    border-radius: 4px; /* Coins arrondis */
+    box-sizing: border-box; /* Pour inclure padding et bordure dans la largeur */
+  }
+  
+  /* Style spécifique pour la zone de texte */
+  textarea {
+    height: 100px; /* Hauteur fixe */
+    resize: vertical; /* Permet de redimensionner verticalement */
+  }
+  
+  /* Style du bouton */
+  button {
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    padding: 10px 15px; /* Espace intérieur */
+    border: none; /* Pas de bordure */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en forme de main */
+    font-size: 16px; /* Taille de la police */
+  }
+  
+  /* Changement du style du bouton au survol */
+  button:hover {
+    background-color: #45a049; /* Couleur de fond au survol */
+  }
+  

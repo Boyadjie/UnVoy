@@ -4,6 +4,9 @@ import {useState} from 'react';
 
 import {Input} from './Inputs/InputManager';
 
+// styles
+import './contactForm.css';
+
 type FormValues = {
   name: string;
   email: string;
@@ -31,8 +34,29 @@ export const ContactForm: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(formValues);
-    // écrire le code pour envoyer le formulaire au serveur
+    let data = {
+      name: formValues.name,
+      email: formValues.email,
+      message: formValues.message,
+    };
 
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+        // setSubmitted(true)
+        // setName('')
+        // setEmail('')
+        // setBody('')
+      }
+    })
     // reset form
     setFormValues({
       name: '',

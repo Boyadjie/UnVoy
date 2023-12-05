@@ -30,6 +30,17 @@ export const ContactForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log(formValues);
+    // écrire le code pour envoyer le formulaire au serveur
+
+    // reset form
+    setFormValues({
+      name: '',
+      email: '',
+      message: '',
+    });
+
+    
   };
 
   return (

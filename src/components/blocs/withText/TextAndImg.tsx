@@ -26,7 +26,7 @@ export const TextAndImg: React.FC<TextAndImgTypes> = ({
     pictureDetails.position === 'right' ? styles.pictureRight : '';
 
   return (
-    <section id={id} className={`${styles.textAndPicture} ${picturePosition}`}>
+    <div id={id} className={`${styles.textAndPicture} ${picturePosition}`}>
       <div className={styles.picture}>
         <Image
           src={pictureDetails.url}
@@ -37,13 +37,13 @@ export const TextAndImg: React.FC<TextAndImgTypes> = ({
       </div>
       <div className={styles.textContent}>
         <div>
-          {subtitle && <h3>{title}</h3>}
+          {title && <h3>{title}</h3>}
           {subtitle && <h2>{subtitle}</h2>}
           <div className={styles.mainContent}>
             <TextBloc content={textContent} />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

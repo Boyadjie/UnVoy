@@ -3,7 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   height: max-content;
-  gap: 2rem;
+  gap: 200px;
 
   &.pictureRight {
     .picture {
@@ -61,10 +61,17 @@
         h2 {
           margin-bottom: 2.5rem;
           font-weight: bold;
+          font-size: 64px;
+          color: var(--primary);
         }
 
         .mainContent {
+          max-width: 450px;
+
           p {
+            font-size: 24px;
+            line-height: 1.5;
+
             strong {
               color: black;
               font-weight: bold;

@@ -1,10 +1,9 @@
 import {storyStepsData} from '../../../data/landingPageStory';
 import {TextAndImg} from '../../blocs/withText/TextAndImg';
-import styles from './story.module.css';
 
 export const Story = () => {
   return (
-    <section id="story" className={styles.storyContainer}>
+    <section id="story">
       {storyStepsData.map(({text, imgUrl}, id) => {
         const imgPosition = id % 2 === 1 ? 'right' : 'left';
 

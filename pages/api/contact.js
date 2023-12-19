@@ -1,11 +1,11 @@
 export default function (req, res) {
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
-    port: 587,
-    host: "live.smtp.mailtrap.io",
+    port: 2525,
+    host: "sandbox.smtp.mailtrap.io",
     auth: {
-      user: 'api',
-      pass: '5a6cab2e1752ab2a0fce78536b61575d',
+      user: 'ce55679fd48266',
+      pass: 'bdedbe3f22bddc',
     },
     secure: false,
   })

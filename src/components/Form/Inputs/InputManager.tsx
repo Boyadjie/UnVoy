@@ -4,7 +4,7 @@ import {Textarea} from './InputTextArea';
 
 type InputType = 'text' | 'email' | 'textarea';
 
-export interface InputsProps {
+export type InputsProps = {
   label: string;
   name: string;
   placeholder?: string;
@@ -15,7 +15,7 @@ export interface InputsProps {
   ) => void;
 }
 
-interface InputManagerProps {
+type InputManagerProps = {
   type: InputType;
   label: string;
   name: string;

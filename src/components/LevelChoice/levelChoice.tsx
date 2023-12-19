@@ -1,7 +1,8 @@
 'use client';
+import React, {useState} from 'react';
+
 import LevelChoiceButton from './LevelButton/LevelChoiceButton';
 import LevelChoicePopup from './LevelPopup/LevelPopup';
-import React, {useState} from 'react';
 
 const LevelChoice = () => {
   const [isOn, setIsOn] = useState(false);

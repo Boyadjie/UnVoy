@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './LevelPopup.module.css';
+
 import {useLevelChoice} from '../../../context/LevelChoiceContext';
+import styles from './LevelPopup.module.css';
 
 type LevelChoicePopupProps = {
   onClose: () => void;

@@ -1,4 +1,4 @@
-import LevelChoice from '../../src/components/LevelChoice/LevelChoice';
+import LevelChoice from '../../src/components/LevelChoice/levelChoice';
 
 export default function DisplayPopup() {
   return (
@@ -8,4 +8,3 @@ export default function DisplayPopup() {
     </div>
   );
 }
-

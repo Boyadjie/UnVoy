@@ -13,7 +13,7 @@ export type InputsProps = {
   onChange: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
-}
+};
 
 type InputManagerProps = {
   type: InputType;
@@ -25,7 +25,7 @@ type InputManagerProps = {
   onChange: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
-}
+};
 
 export const Input: React.FC<InputManagerProps> = ({
   label,

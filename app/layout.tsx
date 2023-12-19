@@ -5,8 +5,6 @@ import './globals.css';
 import { LevelChoiceProvider } from '../src/context/LevelChoiceContext'; // Mettez à jour avec le chemin correct
 import Head from './Head';
 
-
-
 const kodchasan = Kodchasan({
   subsets: ['latin'],
   weight: ['400', '700'],

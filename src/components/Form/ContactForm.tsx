@@ -33,8 +33,8 @@ export const ContactForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formValues);
-    let data = {
+    // console.log(formValues);
+    const data = {
       name: formValues.name,
       email: formValues.email,
       message: formValues.message,
@@ -48,9 +48,9 @@ export const ContactForm: React.FC = () => {
       },
       body: JSON.stringify(data),
     }).then((res) => {
-      console.log('Response received');
+      // console.log('Response received');
       if (res.status === 200) {
-        console.log('Response succeeded!');
+        // console.log('Response succeeded!');
         // setSubmitted(true)
         // setName('')
         // setEmail('')

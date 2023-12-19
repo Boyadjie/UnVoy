@@ -43,28 +43,26 @@ export const ContactForm: React.FC = () => {
     fetch('/api/contact', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     }).then((res) => {
-      console.log('Response received')
+      console.log('Response received');
       if (res.status === 200) {
-        console.log('Response succeeded!')
+        console.log('Response succeeded!');
         // setSubmitted(true)
         // setName('')
         // setEmail('')
         // setBody('')
       }
-    })
+    });
     // reset form
     setFormValues({
       name: '',
       email: '',
       message: '',
     });
-
-    
   };
 
   return (

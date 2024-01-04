@@ -1,17 +1,17 @@
-.partners{
-    background-color: #ECF7F4;
-    height: 235px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.partners {
+  background-color: #ecf7f4;
+  height: 235px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-    .partnersList{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%;
-        margin: 0 150px;
-    }
+  .partnersList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 150px;
+  }
 }

@@ -1,7 +1,8 @@
-import styles from './partners.module.css';
-import {partnersLogoData} from '../../../data/landingPagePartners';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import {partnersLogoData} from '../../../data/landingPagePartners';
+import styles from './partners.module.css';
 
 export const Partners = () => {
   return (

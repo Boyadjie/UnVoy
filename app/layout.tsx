@@ -1,22 +1,26 @@
 import './globals.css';
-import Link from 'next/link';
+
+import {Kodchasan, Nunito} from 'next/font/google';
 
 import Head from './Head';
 
+const kodchasan = Kodchasan({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-kodchasan',
+});
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-nunito',
+});
+
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en">
+    <html lang="fr" className={`${kodchasan.variable} ${nunito.variable}`}>
       <Head />
-      <body>
-        <header>
-          <nav>
-            <Link href="/">Accueil</Link>--
-            <Link href="/login">Connexion</Link>--
-            <Link href="/contact">Contact</Link>
-          </nav>
-        </header>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

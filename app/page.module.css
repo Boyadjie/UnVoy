@@ -3,4 +3,8 @@
     font-family: sans-serif;
     font-size: 2rem;
   }
+
+  > section {
+    padding: 50px 150px;
+  }
 }

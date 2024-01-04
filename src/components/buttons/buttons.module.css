@@ -1,0 +1,7 @@
+.buttons {
+  display: block;
+  padding: 10px 60px;
+  border-radius: 50px;
+  font-size: 24px;
+  width: max-content;
+}

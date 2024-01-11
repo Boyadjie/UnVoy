@@ -8,14 +8,15 @@ type LevelChoicePopupProps = {
 };
 
 const LevelChoicePopup: React.FC<LevelChoicePopupProps> = ({handleClose}) => {
-  const {setLevelChoice, setGoalChoice, levelChoice, goalChoice} = useLevelChoice();
+  const {setLevelChoice, setGoalChoice, levelChoice, goalChoice} =
+    useLevelChoice();
   const [levelSelected, setLevelSelected] = useState<Level>(levelChoice);
   const [goalSelected, setGoalSelected] = useState<Goal>(goalChoice);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    event.preventDefault();
     setLevelChoice(levelSelected);
-    setGoalChoice(goalSelected)
+    setGoalChoice(goalSelected);
     handleClose();
   };
 
@@ -83,7 +84,7 @@ const LevelChoicePopup: React.FC<LevelChoicePopupProps> = ({handleClose}) => {
             Expatrié
           </label>
         </div>
-        <input type="submit" value="Valider"/>
+        <input type="submit" value="Valider" />
       </form>
     </div>
   );

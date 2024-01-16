@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
 
 import {Goal, Level, useLevelChoice} from '../../../context/LevelChoiceContext';
+import {InputRadio} from '../../Form/Inputs/InputRadio';
 import styles from './LevelPopup.module.css';
+
+const LEVELS: Level[] = ['Débutant', 'Intermédiaire', 'Avancé'];
+const GOALS: Goal[] = ['Tourisme', 'Long-séjour', 'Expatrié'];
 
 type LevelChoicePopupProps = {
   handleClose: () => void;
@@ -26,63 +30,29 @@ const LevelChoicePopup: React.FC<LevelChoicePopupProps> = ({handleClose}) => {
       <form onSubmit={handleSubmit}>
         <div>
           <h2>Niveau de connaissances</h2>
-          <label>
-            <input
-              type="radio"
+          {LEVELS.map((value) => (
+            <InputRadio
+              key={value}
+              label={value}
               name="level"
-              value="Débutant"
-              onChange={() => setLevelSelected('Débutant')}
+              value={value}
+              defaultValue={levelSelected}
+              handleChange={() => setLevelSelected(value)}
             />
-            Débutant
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="level"
-              value="Intermédiaire"
-              onChange={() => setLevelSelected('Intermédiaire')}
-            />
-            Intermédiaire
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="level"
-              value="Avancé"
-              onChange={() => setLevelSelected('Avancé')}
-            />
-            Avancé
-          </label>
+          ))}
         </div>
         <div>
           <h2>Objectif de voyage</h2>
-          <label>
-            <input
-              type="radio"
+          {GOALS.map((value) => (
+            <InputRadio
+              key={value}
+              label={value}
               name="goal"
-              value="Tourisme"
-              onChange={() => setGoalSelected('Tourisme')}
+              value={value}
+              defaultValue={goalSelected}
+              handleChange={() => setGoalSelected(value)}
             />
-            Tourisme
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="goal"
-              value="Long-séjour"
-              onChange={() => setGoalSelected('Long-séjour')}
-            />
-            Long-séjour
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="goal"
-              value="Expatrié"
-              onChange={() => setGoalSelected('Expatrié')}
-            />
-            Expatrié
-          </label>
+          ))}
         </div>
         <input type="submit" value="Valider" />
       </form>

@@ -22,7 +22,7 @@
       }
     }
 
-    input[type=submit] {
+    input[type='submit'] {
       display: block;
       width: 100%;
       font-size: medium;

@@ -26,7 +26,9 @@ const LevelChoicePopup: React.FC<LevelChoicePopupProps> = ({handleClose}) => {
 
   return (
     <div className={styles.popup}>
-      <button onClick={handleClose}>Fermer</button>
+      <button className={styles.closeButton} onClick={handleClose}>
+        Fermer
+      </button>
       <form onSubmit={handleSubmit}>
         <div>
           <h2>Niveau de connaissances</h2>

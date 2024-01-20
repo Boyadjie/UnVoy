@@ -1,5 +1,7 @@
 import {Header} from '../src/components/landing/header/Header';
 import {Partners} from '../src/components/landing/partners/Partners';
+import {Product} from '../src/components/landing/product/Product';
+import {Separator} from '../src/components/landing/separator/Separator';
 import {Story} from '../src/components/landing/story/Story';
 import styles from './page.module.css';
 
@@ -9,6 +11,8 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <Partners />
+        <Product />
+        <Separator />
         <Story />
       </main>
     </>

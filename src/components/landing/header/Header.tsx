@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 import {PrimaryButton} from '../../buttons/PrimaryButton';
 import {BubbleMini} from '../../decorations/BubbleMini';

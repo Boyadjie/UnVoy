@@ -1,7 +1,8 @@
-import styles from './contact.module.css';
 import Image from 'next/image';
+
 import {contactData} from '../../../data/landingPageContact';
 import {PrimaryButton} from '../../buttons/PrimaryButton';
+import styles from './contact.module.css';
 
 export const Contact = () => {
   const imgUrl = contactData.illustration.imgUrl;

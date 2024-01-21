@@ -1,39 +1,39 @@
-.member{
-    width: 300px;
-    height: 300px;
-    position: relative;
-    transition: 0.5s;
+.member {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transition: 0.5s;
 }
 .member::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, #1c1d1c7d, #1C1D1C00);
-    z-index: 1;
-  }
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, #1c1d1c7d, #1c1d1c00);
+  z-index: 1;
+}
 
 .member:hover {
-    position: relative;
-    /* transition haute */
-    /* height: 50px;  */
-    /* transition basse */
-    height: 350px; 
-    transition: 0.5s;
+  position: relative;
+  /* transition haute */
+  /* height: 50px;  */
+  /* transition basse */
+  height: 350px;
+  transition: 0.5s;
 }
 
 .textOverlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: white;
-    z-index: 2;
-  }
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
 
-  .name{
-    font-weight: bold;
-  }
+.name {
+  font-weight: bold;
+}

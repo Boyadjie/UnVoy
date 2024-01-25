@@ -1,11 +1,11 @@
 import {Contact} from '../src/components/landing/contact/Contact';
+import {Footer} from '../src/components/landing/footer/Footer';
 import {Header} from '../src/components/landing/header/Header';
 import {Partners} from '../src/components/landing/partners/Partners';
 import {Product} from '../src/components/landing/product/Product';
 import {Separator} from '../src/components/landing/separator/Separator';
 import {Story} from '../src/components/landing/story/Story';
 import {Team} from '../src/components/landing/team/Team';
-import {Footer} from '../src/components/landing/footer/Footer';
 import styles from './page.module.css';
 
 export default function Home() {

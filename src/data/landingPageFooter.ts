@@ -4,7 +4,7 @@ export const footerData = {
     description: 'Image (illustration) for footer component',
     imgUrl: '/illustrations/footer/illustration.svg',
     height: 90,
-    width:250
+    width: 250,
   },
   socialNetworks: {
     instagram: {
@@ -12,7 +12,7 @@ export const footerData = {
       imgUrl: '/illustrations/footer/instagram.svg',
       link: 'https://www.instagram.com/',
       height: 30,
-      width:30
+      width: 30,
     },
-  }
+  },
 };

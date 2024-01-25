@@ -4,7 +4,7 @@ import styles from './team.module.css';
 
 export const Team = () => {
   return (
-    <section id={styles.team}>
+    <section className={styles.team} id="team">
       <h1>l’équipe uncover</h1>
       <div className={styles.membersContainer}>
         {teamData.map(({nom, prenom, post, profilePicture}, id) => {

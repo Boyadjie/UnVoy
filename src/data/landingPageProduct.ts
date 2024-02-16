@@ -3,7 +3,7 @@ export const productData = {
   mokup: {
     title: 'Mokup',
     description: 'Image (illustration) for product component',
-    imgUrl: '/illustrations/product/mokup.png',
+    imgUrl: '/illustrations/product/mokup/mokup.svg',
     href: '/mokup',
   },
   cards: [

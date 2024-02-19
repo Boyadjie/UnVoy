@@ -15,15 +15,6 @@
   z-index: 1;
 }
 
-.member:hover {
-  position: relative;
-  /* transition haute */
-  /* height: 50px;  */
-  /* transition basse */
-  height: 350px;
-  transition: 0.5s;
-}
-
 .textOverlay {
   position: absolute;
   bottom: 0;

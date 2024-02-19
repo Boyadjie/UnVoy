@@ -6,32 +6,21 @@ import styles from './contact.module.css';
 
 export const Contact = () => {
   const imgUrl = contactData.illustration.imgUrl;
+  const textData = contactData.text;
   return (
     <section className={styles.contact} id="contact">
-      <h1>NOUS CONTACTER</h1>
+      <h1>{textData.title}</h1>
       <div className={styles.contactContent}>
-        <Image
-          src={imgUrl}
-          alt="illustration"
-          width={675} // 1 because width is required
-          height={450} // 1 because height is required
-        />
+        <Image src={imgUrl} alt="illustration" width={675} height={450} />
         <div className={styles.textContainer}>
-          <p>
-            A terme, nous souhaitons permettre à tous nos utilisateurs de
-            voyager partout dans le monde avec notre application.
-          </p>
-          <br />
-          <p>
-            Chez Uncover, nous sommes à votre écoute ! Une suggestion, une
-            remarque, un avis ? Contactez nous !
-          </p>
-          <br />
-          <p>
-            L’application UnVoy bientôt disponible pour tous vos voyages au
-            Japon.
-          </p>
-          <br />
+          {textData.content.map(({text}, id) => {
+            return (
+              <>
+                <p key={`contact-${id + 1}`}>{text}</p>
+                <br />
+              </>
+            );
+          })}
           <PrimaryButton url="/Acceuil">Je veux l'application</PrimaryButton>
         </div>
       </div>

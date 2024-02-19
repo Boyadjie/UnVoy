@@ -1,7 +1,8 @@
-import './globals.css';
-
 import {Kodchasan, Nunito} from 'next/font/google';
 
+import './globals.css';
+
+import {LevelChoiceProvider} from '../src/context/LevelChoiceContext';
 import Head from './Head';
 
 const kodchasan = Kodchasan({
@@ -20,7 +21,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="fr" className={`${kodchasan.variable} ${nunito.variable}`}>
       <Head />
-      <body>{children}</body>
+      <body>
+        <LevelChoiceProvider>{children}</LevelChoiceProvider>
+      </body>
     </html>
   );
 }

@@ -9,8 +9,8 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <Story />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }

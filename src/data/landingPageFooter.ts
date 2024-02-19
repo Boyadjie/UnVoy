@@ -1,4 +1,3 @@
-//  2 list (cards and image)
 export const footerData = {
   illustration: {
     description: 'Image (illustration) for footer component',

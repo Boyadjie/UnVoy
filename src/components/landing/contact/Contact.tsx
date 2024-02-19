@@ -32,7 +32,7 @@ export const Contact = () => {
             Japon.
           </p>
           <br />
-          <PrimaryButton url="/Acceuil">En savoir +</PrimaryButton>
+          <PrimaryButton url="/Acceuil">Je veux l'application</PrimaryButton>
         </div>
       </div>
     </section>

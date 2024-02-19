@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import {footerData} from '../../../data/landingPageFooter';
-import styles from './footer.module.css';
 import {Separator} from '../separator/Separator';
+import styles from './footer.module.css';
 
 export const Footer = () => {
   const imgUrl = footerData.illustration.imgUrl;

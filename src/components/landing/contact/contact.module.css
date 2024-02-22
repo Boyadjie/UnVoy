@@ -7,8 +7,9 @@
 
   h1 {
     margin-bottom: 50px;
+    text-align: center;
   }
-
+  
   .contactContent {
     height: 700px;
     width: 100%;
@@ -16,6 +17,25 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+  }
+  @media (max-width: 768px) {
+    .contactContent {
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 500px;
+    }
+  }
+
+  img{
+    width: 675px;
+    height: 450px;
+  }
+  @media (max-width: 768px) {
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .textContainer {

@@ -4,8 +4,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 450px;
-  background-color: #ecf7f4;
-  padding-bottom: 0;
+  background-color: #ecf7f4;  
 
   h1 {
     margin-bottom: 50px;
@@ -13,6 +12,13 @@
   .membersContainer {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+  }
+  @media (max-width: 768px) {
+    .membersContainer {
+      flex-wrap: wrap;
+      width: 100vw;
+      justify-content: center;
+    }
   }
 }

@@ -1,4 +1,6 @@
+'use client';
 import Image from 'next/image';
+import {useEffect, useState} from 'react';
 
 import styles from './member.module.css';
 
@@ -9,8 +11,34 @@ type MemberTypes = {
 };
 
 export const Member = ({name, post, profilePicture}: MemberTypes) => {
+  const [vw, setVw] = useState(0);
+  const [memberSideLenght, setMemberSideLenght] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newVw = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0,
+      );
+      setVw(newVw);
+      if (newVw < 768) {
+        setMemberSideLenght(newVw / 2);
+      } else {
+        setMemberSideLenght(newVw / 5);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
-    <div className={styles.member}>
+    <div
+      className={styles.member}
+      style={{width: `${memberSideLenght}px`, height: `${memberSideLenght}px`}}
+    >
       <div className={styles.textOverlay}>
         <p className={styles.name}>{name}</p>
         <p>{post}</p>
@@ -18,8 +46,8 @@ export const Member = ({name, post, profilePicture}: MemberTypes) => {
       <Image
         src={profilePicture}
         alt={`${name} profile picture`}
-        width={300}
-        height={300}
+        fill={true}
+        sizes="(max-width: 768px) 100vw, 33vw"
       />
     </div>
   );

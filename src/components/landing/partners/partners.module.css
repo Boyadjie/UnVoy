@@ -1,0 +1,25 @@
+.partners {
+  background-color: #ecf7f4;
+  height: 235px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .partnersList {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 150px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  @media (max-width: 768px) {
+    .partnersList {
+      width: 80vw;
+    }
+  }
+}

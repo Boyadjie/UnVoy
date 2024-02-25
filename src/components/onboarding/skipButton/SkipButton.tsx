@@ -11,12 +11,15 @@ export const SkipButton: React.FC<{
   };
 
   return (
-    <button
-      type="button"
-      className={styles.skipButton}
-      onClick={handleClickSkip}
-    >
-      Passer
-    </button>
+    <p className={styles.skipButtonContainer}>
+      Tu connais déjà UnVoy ?
+      <button
+        type="button"
+        className={styles.skipButton}
+        onClick={handleClickSkip}
+      >
+        Passer
+      </button>
+    </p>
   );
 };

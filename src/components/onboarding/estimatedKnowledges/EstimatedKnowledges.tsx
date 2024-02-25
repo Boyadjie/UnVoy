@@ -1,47 +1,37 @@
-import styles from './estimatedKnowledges.module.css';
+import React from 'react';
+
+import {Level, useLevelChoice} from '../../../context/LevelChoiceContext';
+import {InputRadio} from '../../Form/Inputs/InputRadio';
+import styles from '../onboarding.module.css';
+
+const LEVELS: Level[] = ['Débutant', 'Intermédiaire', 'Avancé'];
 
 export const EstimatedKnowledges: React.FC<{
   setDisplayOnboarding: (value: boolean) => void;
 }> = ({setDisplayOnboarding}) => {
+  const {setLevelChoice, levelChoice} = useLevelChoice();
   const handleSendKnowledges = () => {
     setDisplayOnboarding(false);
     localStorage.setItem('displayOnboarding', 'false');
   };
 
   return (
-    <div className={styles.knowledges}>
+    <div>
       <h2>Connaissances</h2>
       <div className={styles.list}>
-        <label htmlFor="novice">
-          <input
-            type="radio"
-            id="novice"
-            value="novice"
+        {LEVELS.map((value) => (
+          <InputRadio
+            key={value}
+            label={value}
             name="knowledges-lvl"
+            value={value}
+            defaultValue={levelChoice}
+            handleChange={() => setLevelChoice(value)}
           />
-          Novice
-        </label>
-        <label htmlFor="medium">
-          <input
-            type="radio"
-            id="medium"
-            value="intermediaire"
-            name="knowledges-lvl"
-          />
-          Intermediaire
-        </label>
-        <label htmlFor="expert">
-          <input
-            type="radio"
-            id="expert"
-            value="expert"
-            name="knowledges-lvl"
-          />
-          Expert
-        </label>
+        ))}
       </div>
 
-      <input type="submit" value="GO" onClick={handleSendKnowledges} />
+      <input type="submit" value="C’est parti" onClick={handleSendKnowledges} />
     </div>
   );
 };

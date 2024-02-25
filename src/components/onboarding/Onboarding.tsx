@@ -1,6 +1,8 @@
 'use client';
 import React, {useEffect, useState} from 'react';
 
+import Image from 'next/image';
+
 import {Concept} from './concept/Concept';
 import {EstimatedKnowledges} from './estimatedKnowledges/EstimatedKnowledges';
 import {NavigationButtons} from './navigateButtons/NavigationButtons';
@@ -30,21 +32,46 @@ export const Onboarding: React.FC = () => {
           />
           {displayedSlide === 1 && (
             <div className={styles.card}>
-              <div className={styles.heading}>UNCOVER</div>
+              <div className={styles.heading}>
+                <Image
+                  src="/illustrations/onboarding/concept.svg"
+                  width={317}
+                  height={329}
+                  alt="Une personne qui réfléchis à son futur voyage."
+                />
+              </div>
               <Concept />
               <SkipButton setDisplayOnboarding={setDisplayOnboarding} />
             </div>
           )}
           {displayedSlide === 2 && (
             <div className={styles.card}>
-              <div className={styles.heading}>UNCOVER 2</div>
+              <div className={styles.heading}>
+                <Image
+                  src="/illustrations/onboarding/objectif.svg"
+                  width={317}
+                  height={329}
+                  alt="Une personne qui réfléchis à son futur voyage."
+                />
+              </div>
               <TravelingReason />
               <SkipButton setDisplayOnboarding={setDisplayOnboarding} />
             </div>
           )}
           {displayedSlide === 3 && (
             <div className={styles.card}>
-              <div className={styles.heading}>UNCOVER 3</div>
+              <div className={styles.heading}>
+                <div className={styles.knowledges}>
+                  <p>
+                    Voyage sans inquiétudes et profite d’une{' '}
+                    <span className="colored">expérience personnalisée</span>
+                    .
+                    <br />
+                    Tout va bien,
+                    <br /> UnVoy est dans ta poche !
+                  </p>
+                </div>
+              </div>
               <EstimatedKnowledges
                 setDisplayOnboarding={setDisplayOnboarding}
               />

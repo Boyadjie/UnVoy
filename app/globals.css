@@ -34,5 +34,5 @@ a {
 }
 
 span.colored {
-  color: var(--primary)
+  color: var(--primary);
 }

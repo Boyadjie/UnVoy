@@ -48,11 +48,11 @@
         display: block;
         width: 70px;
         height: 8px;
-        background: #9FB7B8;
+        background: #9fb7b8;
         border-radius: 50px;
 
         &.currentSlide {
-          background: #00747A;
+          background: #00747a;
         }
       }
     }

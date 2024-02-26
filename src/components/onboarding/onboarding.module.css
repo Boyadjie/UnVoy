@@ -44,6 +44,19 @@
       gap: 30px;
     }
 
+    .knowledges {
+      text-align: center;
+      background: url("/illustrations/onboarding/knowledges-graphics.svg");
+      background-size: 100% 100%;
+
+      p {
+        width: 75%;
+        margin: 40px auto;
+        padding-top: 40px;
+        font-size: 18px;
+      }
+    }
+
     input[type='submit'] {
       display: block;
       margin: 40px auto;

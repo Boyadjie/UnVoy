@@ -3,6 +3,7 @@ import Image from 'next/image';
 import {PrimaryButton} from '../../buttons/PrimaryButton';
 import {BubbleMini} from '../../decorations/BubbleMini';
 import {BubbleSquare} from '../../decorations/BubbleSquare';
+import {BurgerNav} from './BurgerNav';
 import styles from './header.module.css';
 import {Nav} from './Nav';
 
@@ -17,6 +18,7 @@ export const Header = () => {
           height={65}
         />
         <Nav />
+        <BurgerNav />
       </nav>
 
       <section>

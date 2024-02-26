@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {MouseEventHandler} from 'react';
 
 import styles from './styles/inputs.module.css';
 
@@ -7,6 +7,7 @@ type InputRadioType = {
   name: string;
   value: string;
   handleChange: React.ChangeEventHandler<HTMLInputElement>;
+  handleClick?: MouseEventHandler<HTMLInputElement>;
   defaultValue?: string;
 };
 
@@ -15,6 +16,7 @@ export const InputRadio: React.FC<InputRadioType> = ({
   name,
   value,
   handleChange,
+  handleClick,
   defaultValue,
 }) => {
   const isChecked = defaultValue === value;
@@ -29,6 +31,7 @@ export const InputRadio: React.FC<InputRadioType> = ({
         value={value}
         onChange={handleChange}
         checked={isChecked}
+        onClick={handleClick}
       />
       {label}
     </label>

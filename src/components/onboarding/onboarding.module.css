@@ -12,7 +12,6 @@
   backdrop-filter: blur(20px);
 
   h2 {
-    margin-top: 70px;
     text-align: center;
   }
 
@@ -34,6 +33,28 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    .indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      width: 220px;
+      height: 8px;
+      margin: 40px auto;
+
+      span {
+        display: block;
+        width: 70px;
+        height: 8px;
+        background: #9FB7B8;
+        border-radius: 50px;
+
+        &.currentSlide {
+          background: #00747A;
+        }
+      }
     }
 
     .list {

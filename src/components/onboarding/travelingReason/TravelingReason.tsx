@@ -6,7 +6,9 @@ import styles from '../onboarding.module.css';
 
 const GOALS: Goal[] = ['Tourisme', 'Long-séjour', 'Expatrié'];
 
-export const TravelingReason = () => {
+export const TravelingReason: React.FC<{
+  setDisplayedSlide: (slide: number) => void;
+}> = ({setDisplayedSlide}) => {
   const {setGoalChoice, goalChoice} = useLevelChoice();
 
   return (
@@ -21,6 +23,7 @@ export const TravelingReason = () => {
             value={value}
             defaultValue={goalChoice}
             handleChange={() => setGoalChoice(value)}
+            handleClick={() => setDisplayedSlide(3)}
           />
         ))}
       </div>

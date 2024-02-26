@@ -9,7 +9,7 @@
     "test:format": "pnpm lint && tsc",
     "test": "jest",
     "lint": "eslint app src --ext ts,tsx,js,jsx",
-    "style": "prettier -w .",
+    "style": "prettier . --check",
     "prepare": "husky install"
   },
   "dependencies": {

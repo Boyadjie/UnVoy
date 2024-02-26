@@ -11,7 +11,7 @@ export const BurgerNav = () => {
   const [open, setOpen] = useState(true);
   const onClickHandler = async (e: any) => {
     if (open) {
-      e.target.style.transform = 'rotate(90deg)';
+      e.target.style.transform = 'rotate(180deg)';
       e.target.style.transition = 'transform 0.3s';
     } else {
       e.target.style.transform = 'rotate(0deg)';
@@ -22,7 +22,7 @@ export const BurgerNav = () => {
   return (
     <div className={styles.burgerLinks}>
       <Image
-        src="/burgerMenu.svg"
+        src={!open ? '/closeBurgerMenu.svg' : '/burgerMenu.svg'}
         alt="Burger Menu Icon"
         width={65}
         height={65}

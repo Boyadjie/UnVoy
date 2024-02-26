@@ -46,7 +46,7 @@
 
     .knowledges {
       text-align: center;
-      background: url("/illustrations/onboarding/knowledges-graphics.svg");
+      background: url('/illustrations/onboarding/knowledges-graphics.svg');
       background-size: 100% 100%;
 
       p {

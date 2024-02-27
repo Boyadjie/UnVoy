@@ -7,7 +7,9 @@ export type Goal = 'Tourisme' | 'Long-séjour' | 'Expatrié';
 export const LevelChoiceContext = createContext({
   levelChoice: 'Débutant' as Level,
   goalChoice: 'Tourisme' as Goal,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setLevelChoice: (levelChoice: Level) => {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setGoalChoice: (goalChoice: Goal) => {},
 });
 

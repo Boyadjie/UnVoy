@@ -1,4 +1,4 @@
-import {Kodchasan, Nunito} from 'next/font/google';
+import {Kodchasan, Nunito, Open_Sans} from 'next/font/google';
 
 import './globals.css';
 
@@ -17,9 +17,18 @@ const nunito = Nunito({
   variable: '--font-nunito',
 });
 
+const open_sans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-open-sans',
+});
+
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="fr" className={`${kodchasan.variable} ${nunito.variable}`}>
+    <html
+      lang="fr"
+      className={`${kodchasan.variable} ${nunito.variable} ${open_sans.variable}`}
+    >
       <Head />
       <body>
         <LevelChoiceProvider>{children}</LevelChoiceProvider>

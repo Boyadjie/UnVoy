@@ -31,7 +31,7 @@ export const Header = () => {
             <br />
             sous un meilleur angle
           </h1>
-          <PrimaryButton url="/Acceuil">En savoir +</PrimaryButton>
+          <PrimaryButton url="/accueil">En savoir +</PrimaryButton>
         </div>
 
         <Image

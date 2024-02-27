@@ -16,7 +16,7 @@ export const Nav = () => {
       <Link href="/#contact" onClick={(e) => smoothScroll(e, 'contact')}>
         Nous contacter
       </Link>
-      <Link href="/Accueil">Découvrir</Link> {/* button */}
+      <Link href="/accueil">Découvrir</Link> {/* button */}
     </div>
   );
 };

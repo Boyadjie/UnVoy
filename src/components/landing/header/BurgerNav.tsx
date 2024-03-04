@@ -9,6 +9,7 @@ import styles from './header.module.css';
 
 export const BurgerNav = () => {
   const [open, setOpen] = useState(true);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onClickHandler = async (e: any) => {
     if (open) {
       e.target.style.transform = 'rotate(180deg)';

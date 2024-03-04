@@ -30,10 +30,7 @@ export const RegisterForm: React.FC = () => {
   const isValidMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email);
   const isSamePassword =
     formValues.password === formValues.passwordConfirm && !isEmptyPasswords;
-  const isValidPassword =
-    formValues.password.length > 8 &&
-    formValues.password.match(/[a-z]/) &&
-    formValues.password.match(/[0-9]/);
+  const isValidPassword = formValues.password.length >= 8;
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -50,7 +47,7 @@ export const RegisterForm: React.FC = () => {
     event.preventDefault();
     if (
       !isValideUsername ||
-      isValideUsername ||
+      isEmptyUsername ||
       !isValidMail ||
       !isSamePassword ||
       !isValidPassword ||
@@ -79,7 +76,7 @@ export const RegisterForm: React.FC = () => {
     <div>
       <div>
         {/* use image from next */}
-        <h1>Inscription</h1>
+        <h1>Register</h1>
       </div>
 
       <form onSubmit={handleSubmit}>

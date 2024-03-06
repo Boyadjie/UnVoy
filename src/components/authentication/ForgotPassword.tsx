@@ -2,27 +2,24 @@
 
 import {useState} from 'react';
 
-import {signInWithEmailAndPassword} from 'firebase/auth';
-import Link from 'next/link';
+import {sendPasswordResetEmail} from 'firebase/auth';
 
 import {auth} from '../../firebase';
 import {Input} from './Inputs/InputManager';
 
 type FormValues = {
   email: string;
-  password: string;
 };
 
-export const LoginForm: React.FC = () => {
+export const ForgotPassword: React.FC = () => {
   const [formValues, setFormValues] = useState<FormValues>({
     email: '',
-    password: '',
   });
 
   const [responseErr, setResponseErr] = useState<boolean>(false);
+  const [responseSuccess, setResponseSuccess] = useState<boolean>(false);
 
   const isEmptyMail = formValues.email.length === 0;
-  const isEmptyPasswords = formValues.password.length < 1;
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -36,16 +33,14 @@ export const LoginForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (isEmptyPasswords || isEmptyMail) {
+    if (isEmptyMail) {
       return;
     }
 
     // move logic to back end file useing next.js api routes
-    signInWithEmailAndPassword(auth, formValues.email, formValues.password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        // eslint-disable-next-line no-console
-        console.log(user);
+    sendPasswordResetEmail(auth, formValues.email)
+      .then(() => {
+        setResponseSuccess(true);
       })
       .catch(() => {
         setResponseErr(true);
@@ -56,7 +51,7 @@ export const LoginForm: React.FC = () => {
     <div>
       <div>
         {/* use image from next */}
-        <h1>Login</h1>
+        <h1>MDP oublié</h1>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -70,20 +65,10 @@ export const LoginForm: React.FC = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div>
-          <Input
-            type="password"
-            name="password"
-            value={formValues.password}
-            placeholder="Password"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <Link href="/forgotPassword">Forgot Password?</Link>
-        </div>
-        <div id="formError">
-          {responseErr ? 'Email or Password Invalid' : ''}
+        <div id="info-area">
+          {responseErr && "Erreur lors de l'envoi du mail"}
+          {responseSuccess &&
+            'A link to reset your password has been sent to your mail address'}
         </div>
         <button type="submit">Submit</button>
       </form>

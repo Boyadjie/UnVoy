@@ -14,8 +14,12 @@ type LevelChoicePopupProps = {
 const LevelChoicePopup: React.FC<LevelChoicePopupProps> = ({handleClose}) => {
   const {setLevelChoice, setGoalChoice, levelChoice, goalChoice} =
     useLevelChoice();
-  const [levelSelected, setLevelSelected] = useState<Level>(levelChoice);
-  const [goalSelected, setGoalSelected] = useState<Goal>(goalChoice);
+  const [levelSelected, setLevelSelected] = useState<Level | undefined>(
+    levelChoice,
+  );
+  const [goalSelected, setGoalSelected] = useState<Goal | undefined>(
+    goalChoice,
+  );
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

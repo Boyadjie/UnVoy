@@ -1,16 +1,27 @@
 'use client';
-import React, {createContext, useState, useContext} from 'react';
+import React, {
+  createContext,
+  useState,
+  useContext,
+  SetStateAction,
+  Dispatch,
+} from 'react';
 
 export type Level = 'Débutant' | 'Intermédiaire' | 'Avancé';
 export type Goal = 'Tourisme' | 'Long-séjour' | 'Expatrié';
 
-export const LevelChoiceContext = createContext({
-  levelChoice: 'Débutant' as Level,
-  goalChoice: 'Tourisme' as Goal,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  setLevelChoice: (levelChoice: Level) => {},
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  setGoalChoice: (goalChoice: Goal) => {},
+type LevelChoiceContextType = {
+  levelChoice: Level | undefined;
+  goalChoice: Goal | undefined;
+  setLevelChoice: Dispatch<SetStateAction<Level | undefined>>;
+  setGoalChoice: Dispatch<SetStateAction<Goal | undefined>>;
+};
+
+export const LevelChoiceContext = createContext<LevelChoiceContextType>({
+  levelChoice: undefined,
+  goalChoice: undefined,
+  setLevelChoice: () => {},
+  setGoalChoice: () => {},
 });
 
 export const useLevelChoice = () => useContext(LevelChoiceContext);
@@ -22,8 +33,8 @@ type LevelChoiceProviderProps = {
 export const LevelChoiceProvider: React.FC<LevelChoiceProviderProps> = ({
   children,
 }) => {
-  const [levelChoice, setLevelChoice] = useState<Level>('Débutant'); // Specify the type as Level
-  const [goalChoice, setGoalChoice] = useState<Goal>('Tourisme'); // Specify the type as Goal
+  const [levelChoice, setLevelChoice] = useState<Level | undefined>();
+  const [goalChoice, setGoalChoice] = useState<Goal | undefined>();
 
   return (
     <LevelChoiceContext.Provider

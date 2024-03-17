@@ -12,14 +12,14 @@ export default function Home() {
         <Onboarding />
         <section className={styles.header}>
           <div className={styles.navigation}>
-            <Link href="/notifications">
+            <div>
               <Image
                 src="/icons/notifications.svg"
                 alt="Icône de notification"
                 width={24}
                 height={24}
               />
-            </Link>
+            </div>
             <Link href="/settings">
               <Image
                 src="/icons/setting.svg"

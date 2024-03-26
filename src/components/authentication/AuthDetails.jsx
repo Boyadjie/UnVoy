@@ -36,7 +36,7 @@ export const AuthDetails = () => {
     <div>
       {authUser ? (
         <>
-          <p>{`Signed in as ${authUser.email}`}</p>
+          <p>{`Signed in as ${authUser?.email}`}</p>
           <button onClick={handleSignOut}>Sign out</button>
         </>
       ) : (

@@ -42,10 +42,8 @@ export const LoginForm: React.FC = () => {
 
     // move logic to back end file useing next.js api routes
     signInWithEmailAndPassword(auth, formValues.email, formValues.password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        // eslint-disable-next-line no-console
-        console.log(user);
+      .then(() => {
+        window.location.href = '/accueil';
       })
       .catch(() => {
         setResponseErr(true);

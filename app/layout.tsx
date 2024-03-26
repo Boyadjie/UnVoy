@@ -2,6 +2,7 @@ import {Kodchasan, Nunito, Open_Sans} from 'next/font/google';
 
 import './globals.css';
 
+import {AuthProvider} from '../src/context/AuthContext';
 import {LevelChoiceProvider} from '../src/context/LevelChoiceContext';
 import Head from './Head';
 
@@ -31,7 +32,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     >
       <Head />
       <body>
-        <LevelChoiceProvider>{children}</LevelChoiceProvider>
+        <AuthProvider>
+          <LevelChoiceProvider>{children}</LevelChoiceProvider>
+        </AuthProvider>
       </body>
     </html>
   );

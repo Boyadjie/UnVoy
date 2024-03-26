@@ -78,7 +78,7 @@ export const LoginForm: React.FC = () => {
           />
         </div>
         <div>
-          <Link href="/forgotPassword">Forgot Password?</Link>
+          <Link href="/forgotpassword">Forgot Password?</Link>
         </div>
         <div id="formError">
           {responseErr ? 'Email or Password Invalid' : ''}

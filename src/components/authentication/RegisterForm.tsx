@@ -3,6 +3,7 @@
 import {useState} from 'react';
 
 import {createUserWithEmailAndPassword} from 'firebase/auth';
+import {useRouter} from 'next/navigation';
 
 import {auth} from '../../firebase';
 import {Input} from './Inputs/InputManager';
@@ -15,6 +16,8 @@ type FormValues = {
 };
 
 export const RegisterForm: React.FC = () => {
+  const router = useRouter();
+
   const [formValues, setFormValues] = useState<FormValues>({
     email: '',
     password: '',
@@ -60,7 +63,7 @@ export const RegisterForm: React.FC = () => {
     // move logic to back end file useing next.js api routes
     createUserWithEmailAndPassword(auth, formValues.email, formValues.password)
       .then(() => {
-        window.location.href = '/accueil';
+        router.push('/accueil', {scroll: false});
       })
       .catch((error) => {
         const errorCode = error.code;

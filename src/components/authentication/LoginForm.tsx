@@ -4,6 +4,7 @@ import {useState} from 'react';
 
 import {signInWithEmailAndPassword} from 'firebase/auth';
 import Link from 'next/link';
+import {useRouter} from 'next/navigation';
 
 import {auth} from '../../firebase';
 import {Input} from './Inputs/InputManager';
@@ -23,6 +24,7 @@ export const LoginForm: React.FC = () => {
 
   const isEmptyMail = formValues.email.length === 0;
   const isEmptyPasswords = formValues.password.length < 1;
+  const router = useRouter();
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -43,7 +45,7 @@ export const LoginForm: React.FC = () => {
     // move logic to back end file useing next.js api routes
     signInWithEmailAndPassword(auth, formValues.email, formValues.password)
       .then(() => {
-        window.location.href = '/accueil';
+        router.push('/accueil', {scroll: false});
       })
       .catch(() => {
         setResponseErr(true);

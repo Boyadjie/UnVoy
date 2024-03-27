@@ -12,7 +12,7 @@ type MemberTypes = {
 };
 
 export const Member = ({name, post, profilePicture}: MemberTypes) => {
-  const [vw, setVw] = useState(0);
+  const [, setVw] = useState(0);
   const [memberSideLenght, setMemberSideLenght] = useState(0);
 
   useEffect(() => {

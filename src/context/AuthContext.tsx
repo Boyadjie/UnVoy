@@ -1,6 +1,7 @@
 'use client';
 import React, {createContext, useState, useContext, useEffect} from 'react';
 
+import {User} from 'firebase/auth';
 import {onAuthStateChanged, signOut} from 'firebase/auth';
 import {useRouter, usePathname} from 'next/navigation';
 
@@ -21,8 +22,8 @@ type AuthProviderProps = {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
   const [auth, setAuth] = useState<LoggedIn>(false);
-
-  const [authUser, setAuthUser] = useState(fireAuth.currentUser);
+  const [authUser, setAuthUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
   const publicRoutes = ['/register', '/login', '/forgotpassword', '/'];
@@ -36,10 +37,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
         setAuthUser(null);
         setAuth(false);
       }
+      setLoading(false);
     });
 
     return () => listener();
   }, []);
+
+  useEffect(() => {
+    if (!loading && !authUser && pathname && !publicRoutes.includes(pathname)) {
+      router.push('/register', {scroll: false});
+    }
+  }, [loading, authUser, pathname, router, publicRoutes]);
 
   const handleSignOut = () => {
     signOut(fireAuth)
@@ -49,16 +57,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
         router.push('/login', {scroll: false});
       })
       .catch((error) => {
-        // eslint-disable-next-line no-console
         console.error(error);
       });
   };
-
-  if (!authUser && pathname && !publicRoutes.includes(pathname)) {
-    setTimeout(() => {
-      router.push('/register', {scroll: false});
-    }, 100);
-  }
 
   return (
     <AuthContext.Provider value={{auth, setAuth}}>

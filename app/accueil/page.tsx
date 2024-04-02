@@ -61,6 +61,7 @@ export default function Home() {
             items={tempData}
             link="/accueil#"
           />
+          <Slider title="Actualités" items={tempData} link="/accueil#" />
         </div>
       </div>
     </>

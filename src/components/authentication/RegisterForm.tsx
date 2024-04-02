@@ -7,6 +7,8 @@ import {useRouter} from 'next/navigation';
 
 import {auth} from '../../firebase';
 import {Input} from './Inputs/InputManager';
+import styles from './styles/registerForm.module.css';
+import Title from './Title';
 
 type FormValues = {
   email: string;
@@ -74,11 +76,8 @@ export const RegisterForm: React.FC = () => {
   };
 
   return (
-    <div>
-      <div>
-        {/* use image from next */}
-        <h1>Register</h1>
-      </div>
+    <div className={styles.container}>
+      <Title iconUrl="icons/register.svg" text="REGISTER" />
 
       <form onSubmit={handleSubmit}>
         <div>

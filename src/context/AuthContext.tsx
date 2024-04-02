@@ -9,9 +9,13 @@ import {auth as fireAuth} from '../firebase';
 
 export type LoggedIn = true | false;
 
+type Dispatch<A> = (value: A) => void;
+
+type SetStateAction<S> = S | ((prevState: S) => S);
+
 export const AuthContext = createContext({
   auth: false as LoggedIn,
-  setAuth: (auth: LoggedIn) => {},
+  setAuth: {} as Dispatch<SetStateAction<LoggedIn>>,
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -26,7 +30,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
   const [loading, setLoading] = useState(true);
   const pathname = usePathname();
   const router = useRouter();
-  const publicRoutes = ['/register', '/login', '/forgotpassword', '/'];
 
   useEffect(() => {
     const listener = onAuthStateChanged(fireAuth, (user) => {
@@ -44,10 +47,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
   }, []);
 
   useEffect(() => {
+    const publicRoutes = ['/register', '/login', '/forgotpassword', '/'];
     if (!loading && !authUser && pathname && !publicRoutes.includes(pathname)) {
       router.push('/register', {scroll: false});
     }
-  }, [loading, authUser, pathname, router, publicRoutes]);
+  }, [loading, authUser, pathname, router]);
 
   const handleSignOut = () => {
     signOut(fireAuth)

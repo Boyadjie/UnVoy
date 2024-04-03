@@ -10,6 +10,8 @@ export type InputsProps = {
   placeholder?: string;
   value: string;
   required: boolean;
+  startIconUrl?: string;
+  endIconUrl?: string | string[];
   onChange: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
@@ -22,6 +24,8 @@ type InputManagerProps = {
   placeholder?: string;
   value: string;
   required?: boolean;
+  startIconUrl?: string;
+  endIconUrl?: string | string[];
   onChange: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
@@ -35,6 +39,8 @@ export const Input: React.FC<InputManagerProps> = ({
   value,
   onChange,
   required = false,
+  startIconUrl,
+  endIconUrl,
 }) => {
   switch (type) {
     case 'text':
@@ -46,6 +52,8 @@ export const Input: React.FC<InputManagerProps> = ({
           value={value}
           required={required}
           onChange={onChange}
+          startIconUrl={startIconUrl}
+          endIconUrl={endIconUrl}
         />
       );
     case 'email':
@@ -57,6 +65,8 @@ export const Input: React.FC<InputManagerProps> = ({
           value={value}
           required={required}
           onChange={onChange}
+          startIconUrl={startIconUrl}
+          endIconUrl={endIconUrl}
         />
       );
     case 'password':
@@ -68,6 +78,8 @@ export const Input: React.FC<InputManagerProps> = ({
           value={value}
           required={required}
           onChange={onChange}
+          startIconUrl={startIconUrl}
+          endIconUrl={endIconUrl}
         />
       );
     default:

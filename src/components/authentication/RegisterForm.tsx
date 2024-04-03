@@ -79,45 +79,43 @@ export const RegisterForm: React.FC = () => {
     <div className={styles.container}>
       <Title iconUrl="icons/register.svg" text="REGISTER" />
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <Input
-            required={true}
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={formValues.username}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <Input
-            required={true}
-            type="email"
-            name="email"
-            placeholder="Mail address"
-            value={formValues.email}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <Input
-            type="password"
-            name="password"
-            value={formValues.password}
-            placeholder="Password"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <Input
-            type="password"
-            name="passwordConfirm"
-            value={formValues.passwordConfirm}
-            placeholder="Confirm password"
-            onChange={handleInputChange}
-          />
-        </div>
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
+        <Input
+          required={true}
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={formValues.username}
+          onChange={handleInputChange}
+          startIconUrl="icons/user.svg"
+        />
+        <Input
+          required={true}
+          type="email"
+          name="email"
+          placeholder="Mail address"
+          value={formValues.email}
+          onChange={handleInputChange}
+          startIconUrl="icons/mail.svg"
+        />
+        <Input
+          type="password"
+          name="password"
+          value={formValues.password}
+          placeholder="Password"
+          onChange={handleInputChange}
+          startIconUrl="icons/lock.svg"
+          endIconUrl={['icons/eye.svg', 'icons/eye-slash.svg']}
+        />
+        <Input
+          type="password"
+          name="passwordConfirm"
+          value={formValues.passwordConfirm}
+          placeholder="Confirm password"
+          onChange={handleInputChange}
+          startIconUrl="icons/lock.svg"
+          endIconUrl={['icons/eye.svg', 'icons/eye-slash.svg']}
+        />
         <div id="formError">
           <ul>
             {!isValideUsername && !isEmptyUsername && (
@@ -139,7 +137,9 @@ export const RegisterForm: React.FC = () => {
             )}
           </ul>
         </div>
-        <button type="submit">Submit</button>
+        <button className={styles.submitButton} type="submit">
+          Register
+        </button>
       </form>
     </div>
   );

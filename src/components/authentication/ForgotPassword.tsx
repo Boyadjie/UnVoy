@@ -6,6 +6,7 @@ import {sendPasswordResetEmail} from 'firebase/auth';
 
 import {auth} from '../../firebase';
 import {Input} from './Inputs/InputManager';
+import styles from './styles/forgotPassword.module.css';
 
 type FormValues = {
   email: string;
@@ -48,14 +49,9 @@ export const ForgotPassword: React.FC = () => {
   };
 
   return (
-    <div>
-      <div>
-        {/* use image from next */}
-        <h1>MDP oublié</h1>
-      </div>
-
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
+        <div className={styles.gluedChilds}>
           <Input
             required={true}
             type="email"
@@ -63,14 +59,22 @@ export const ForgotPassword: React.FC = () => {
             placeholder="Mail address"
             value={formValues.email}
             onChange={handleInputChange}
+            startIconUrl="icons/mail.svg"
           />
         </div>
-        <div id="info-area">
+        <div id="info-area" className={styles.forgotPasswordText}>
           {responseErr && "Erreur lors de l'envoi du mail"}
-          {responseSuccess &&
-            'A link to reset your password has been sent to your mail address'}
+          {responseSuccess
+            ? 'If that user exist then link to reset your password has been sent to your mail address'
+            : 'We will send you a recovery link by mail.'}
         </div>
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          className={styles.submitButton}
+          disabled={responseSuccess}
+        >
+          Submit
+        </button>
       </form>
     </div>
   );

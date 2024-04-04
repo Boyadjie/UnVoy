@@ -19,7 +19,7 @@ const Title: React.FC<TitleProps> = ({iconUrl, text, navigateTo = ''}) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.titleContainer}>
       <div className={styles.icon} onClick={handleIconClick}>
         <Image src={iconUrl} alt="icon" height={18} width={18} />
       </div>

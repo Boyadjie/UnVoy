@@ -3,10 +3,10 @@
 import {useState} from 'react';
 
 import {createUserWithEmailAndPassword} from 'firebase/auth';
-import {useRouter} from 'next/navigation';
 
 import {auth} from '../../firebase';
 import {Input} from './Inputs/InputManager';
+import RegisteredPopup from './RegisteredPopup';
 import styles from './styles/registerForm.module.css';
 
 type FormValues = {
@@ -17,8 +17,7 @@ type FormValues = {
 };
 
 export const RegisterForm: React.FC = () => {
-  const router = useRouter();
-
+  const [success, setSuccess] = useState<boolean>(false);
   const [formValues, setFormValues] = useState<FormValues>({
     email: '',
     password: '',
@@ -64,7 +63,7 @@ export const RegisterForm: React.FC = () => {
     // move logic to back end file useing next.js api routes
     createUserWithEmailAndPassword(auth, formValues.email, formValues.password)
       .then(() => {
-        router.push('/accueil', {scroll: false});
+        setSuccess(true);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -138,6 +137,7 @@ export const RegisterForm: React.FC = () => {
           Register
         </button>
       </form>
+      {success && <RegisteredPopup />}
     </div>
   );
 };

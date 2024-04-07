@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import {Slider} from '../../src/components/blocs/slider/Slider';
+import {Navbar} from '../../src/components/navbar/Navbar';
 import {Onboarding} from '../../src/components/onboarding/Onboarding';
 import {Profile} from '../../src/components/profile/Profile';
 import styles from './page.module.css';
@@ -34,6 +35,7 @@ export default function Home() {
     <>
       <div id={styles.home}>
         <Onboarding />
+        <Navbar />
         <section className={styles.header}>
           <div className={styles.navigation}>
             <div>

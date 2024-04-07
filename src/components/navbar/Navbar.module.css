@@ -1,0 +1,28 @@
+.navbar {
+  display: block;
+  position: fixed;
+  background: white;
+  padding: 0 30px;
+  border-radius: 50px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 8px 28px 0 rgba(20, 20, 43, 0.1);
+  z-index: 50;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+    a {
+      width: max-content;
+      height: max-content;
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+}

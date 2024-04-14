@@ -10,7 +10,7 @@ export default function register() {
     <div className={styles.container}>
       <Title iconUrl="icons/register.svg" text="REGISTER" />
       <RegisterForm />
-      <ConnectionWith authNature="register" />
+      <ConnectionWith />
       <TextAndRoute
         text="Already have an account?"
         route="/login"

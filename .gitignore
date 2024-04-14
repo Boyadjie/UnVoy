@@ -39,8 +39,3 @@ next-env.d.ts
 .vscode
 .idea
 .swc
-
-# firebase config
-
-firebase.js
-```

@@ -19,11 +19,11 @@ const RegisteredPopup = () => {
     <div className={styles.registeredPopupContainer}>
       <div className={styles.illustrationsContainer}>
         <Image
-          src="/illustrations/auth/owl.svg"
+          src="/illustrations/auth/logo.svg"
           width={150}
           height={180}
           alt="Owl logo."
-          className={styles.owl}
+          className={styles.logo}
         />
         <Image
           src="/illustrations/auth/orangeDot.svg"

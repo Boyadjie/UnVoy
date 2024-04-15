@@ -72,12 +72,7 @@
     margin-top: 40px;
   }
 
-  /*       className={styles.orangeDot}
-          className={styles.owl}
-          className={styles.blueWave}
-          className={styles.decoDots}
-          className={styles.yellowDot} */
-  .owl {
+  .logo {
     align-self: center;
     position: relative;
     top: 50%;

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import {Slider} from '../../src/components/blocs/slider/Slider';
+import {MapPreview} from '../../src/components/map/MapPreview';
 import {Navbar} from '../../src/components/navbar/Navbar';
 import {Onboarding} from '../../src/components/onboarding/Onboarding';
 import {Profile} from '../../src/components/profile/Profile';
@@ -64,6 +65,7 @@ export default function Home() {
             link="/accueil#"
           />
           <Slider title="Actualités" items={tempData} link="/accueil#" />
+          <MapPreview />
         </div>
       </div>
     </>

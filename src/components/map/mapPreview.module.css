@@ -1,0 +1,32 @@
+.previewContainer {
+  text-align: center;
+
+  h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .mapContainer {
+    display: block;
+    position: relative;
+    width: max-content;
+    height: max-content;
+
+    .filters {
+      position: absolute;
+      width: max-content;
+      height: max-content;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: nowrap;
+      padding: 15px 10px;
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0 8px 28px 0 rgba(20, 20, 43, 0.1);
+    }
+  }
+}

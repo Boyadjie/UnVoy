@@ -6,12 +6,19 @@
     margin-bottom: 20px;
   }
 
-  .mapContainer,
-  a {
+  .mapContainer {
     display: block;
     position: relative;
     width: max-content;
     height: max-content;
+    margin-bottom: 55px;
+
+    a {
+      display: block;
+      position: relative;
+      width: max-content;
+      height: max-content;
+    }
 
     .filters {
       position: absolute;
@@ -27,11 +34,23 @@
       padding: 15px 10px;
       border-radius: 15px;
       background: white;
-      box-shadow: 0 8px 28px 0 rgba(20, 20, 43, 0.1);
+      box-shadow: var(--shadow);
 
       .filter:hover {
         cursor: pointer;
       }
+    }
+  }
+
+  .recommendations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    > p {
+      font-family: var(--font-kodchasan);
+      font-size: 14px;
     }
   }
 }

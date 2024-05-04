@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  text-align: left;
+  gap: 10px;
+  background: white;
+  box-shadow: var(--shadow);
+  padding: 10px;
+  border-radius: 15px;
+
+  .img {
+    width: 85px;
+    min-width: 85px;
+    height: 85px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  p {
+    font-family: var(--font-open-sans);
+    font-size: 10px;
+    opacity: 0.6;
+  }
+
+  .ratings {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-top: 10px;
+
+    > span {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      font-size: 14px;
+    }
+  }
+}

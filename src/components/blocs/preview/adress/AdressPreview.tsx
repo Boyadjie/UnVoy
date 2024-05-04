@@ -30,8 +30,24 @@ export const AdressPreview: React.FC<AdressProps> = ({
           <h3>{title}</h3>
           <p>{subTitle}</p>
           <div className={styles.ratings}>
-            <span>⭐ {stars}</span>
-            <span>👍 {likes}</span>
+            <span>
+              <Image
+                src="/icons/map/recommendations/etoile.svg"
+                alt="note"
+                width={15}
+                height={15}
+              />{' '}
+              {stars}
+            </span>
+            <span>
+              <Image
+                src="/icons/map/recommendations/like_noir.svg"
+                alt="note"
+                width={10}
+                height={10}
+              />{' '}
+              {likes}
+            </span>
           </div>
         </div>
       </div>

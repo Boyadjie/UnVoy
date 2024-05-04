@@ -6,7 +6,8 @@
     margin-bottom: 20px;
   }
 
-  .mapContainer {
+  .mapContainer,
+  a {
     display: block;
     position: relative;
     width: max-content;
@@ -27,6 +28,10 @@
       border-radius: 15px;
       background: white;
       box-shadow: 0 8px 28px 0 rgba(20, 20, 43, 0.1);
+
+      .filter:hover {
+        cursor: pointer;
+      }
     }
   }
 }

@@ -6,6 +6,8 @@
   --primary-light: #ecf7f4;
 
   --secondary: #ff8a44;
+
+  --shadow: 0 8px 28px 0 rgba(20, 20, 43, 0.1);
 }
 
 * {

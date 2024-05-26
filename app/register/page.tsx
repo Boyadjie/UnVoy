@@ -1,4 +1,3 @@
-'use client';
 import ConnectionWith from '../../src/components/authentication/ConnectionWith';
 import {RegisterForm} from '../../src/components/authentication/RegisterForm';
 import TextAndRoute from '../../src/components/authentication/TextAndRoute';

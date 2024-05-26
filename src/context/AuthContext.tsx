@@ -9,9 +9,9 @@ import {auth as fireAuth} from '../firebase';
 
 export type LoggedIn = true | false;
 
-type Dispatch<A> = (value: A) => void;
+type Dispatch<Action> = (value: Action) => void;
 
-type SetStateAction<S> = S | ((prevState: S) => S);
+type SetStateAction<State> = State | ((prevState: State) => State);
 
 export const AuthContext = createContext({
   auth: false as LoggedIn,

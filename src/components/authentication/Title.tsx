@@ -1,9 +1,11 @@
+'use client';
 import React from 'react';
 
 import Image from 'next/image';
-import {useRouter} from 'next/navigation';
+import Link from 'next/link';
 
 import styles from './styles/title.module.css';
+
 
 interface TitleProps {
   iconUrl: string;
@@ -12,17 +14,12 @@ interface TitleProps {
 }
 
 const Title: React.FC<TitleProps> = ({iconUrl, text, navigateTo = ''}) => {
-  const router = useRouter();
-
-  const handleIconClick = () => {
-    router.push(navigateTo);
-  };
 
   return (
     <div className={styles.titleContainer}>
-      <div className={styles.icon} onClick={handleIconClick}>
+     <Link href={navigateTo}>
         <Image src={iconUrl} alt="icon" height={18} width={18} />
-      </div>
+      </Link>
       <p className={styles.title}>{text}</p>
     </div>
   );

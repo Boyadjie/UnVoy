@@ -65,11 +65,13 @@ export const RegisterForm: React.FC = () => {
       .then(() => {
         setSuccess(true);
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // eslint-disable-next-line no-console
-        console.log(errorCode, errorMessage);
+      .catch(() => {
+        setFormValues({
+          email: '',
+          password: '',
+          passwordConfirm: '',
+          username: '',
+        });
       });
   };
 

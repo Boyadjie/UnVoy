@@ -7,13 +7,9 @@ import {sendPasswordResetEmail} from 'firebase/auth';
 import {auth} from '../../firebase';
 import {Input} from './Inputs/InputManager';
 
-type FormValues = {
-  email: string;
-};
-
 export const ForgotPassword: React.FC = () => {
-  const [formValues, setFormValues] = useState<FormValues>({
-    email: '',
+  const [formValues, setFormValues] = useState({
+    email: '' as string,
   });
 
   const [responseErr, setResponseErr] = useState<boolean>(false);
@@ -37,7 +33,6 @@ export const ForgotPassword: React.FC = () => {
       return;
     }
 
-    // move logic to back end file useing next.js api routes
     sendPasswordResetEmail(auth, formValues.email)
       .then(() => {
         setResponseSuccess(true);
@@ -50,7 +45,6 @@ export const ForgotPassword: React.FC = () => {
   return (
     <div>
       <div>
-        {/* use image from next */}
         <h1>MDP oublié</h1>
       </div>
 

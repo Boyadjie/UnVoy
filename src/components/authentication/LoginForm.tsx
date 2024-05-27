@@ -42,7 +42,6 @@ export const LoginForm: React.FC = () => {
       return;
     }
 
-    // move logic to back end file useing next.js api routes
     signInWithEmailAndPassword(auth, formValues.email, formValues.password)
       .then(() => {
         router.push('/accueil', {scroll: false});
@@ -55,7 +54,6 @@ export const LoginForm: React.FC = () => {
   return (
     <div>
       <div>
-        {/* use image from next */}
         <h1>Login</h1>
       </div>
 

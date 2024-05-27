@@ -14,7 +14,7 @@ export const BurgerNav = () => {
     if (open && e.target instanceof HTMLImageElement) {
       e.target.style.transform = 'rotate(180deg)';
       e.target.style.transition = 'transform 0.3s';
-    } else if (e.target instanceof HTMLImageElement){
+    } else if (e.target instanceof HTMLImageElement) {
       e.target.style.transform = 'rotate(0deg)';
       e.target.style.transition = 'transform 0.3s';
     }

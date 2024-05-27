@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 import styles from './styles/title.module.css';
 
-
 interface TitleProps {
   iconUrl: string;
   text: string;
@@ -14,10 +13,9 @@ interface TitleProps {
 }
 
 const Title: React.FC<TitleProps> = ({iconUrl, text, navigateTo = ''}) => {
-
   return (
     <div className={styles.titleContainer}>
-     <Link href={navigateTo}>
+      <Link href={navigateTo}>
         <Image src={iconUrl} alt="icon" height={18} width={18} />
       </Link>
       <p className={styles.title}>{text}</p>

@@ -47,7 +47,7 @@ const RegisteredPopup = () => {
           className={styles.decoDots}
         />
         <Image
-          src="/illustrations/auth/yellowDOt.svg"
+          src="/illustrations/auth/yellowDot.svg"
           width={17}
           height={17}
           alt="yellow dot."

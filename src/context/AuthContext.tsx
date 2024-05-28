@@ -68,7 +68,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
   return (
     <AuthContext.Provider value={{auth, setAuth}}>
       {children}
-      {authUser ? <button onClick={handleSignOut}>Sign out</button> : null}
     </AuthContext.Provider>
   );
 };

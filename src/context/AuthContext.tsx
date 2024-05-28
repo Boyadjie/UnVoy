@@ -53,18 +53,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
     }
   }, [loading, authUser, pathname, router]);
 
-  const handleSignOut = () => {
-    signOut(fireAuth)
-      .then(() => {
-        setAuthUser(null);
-        setAuth(false);
-        router.push('/login', {scroll: false});
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
   return (
     <AuthContext.Provider value={{auth, setAuth}}>
       {children}

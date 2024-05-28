@@ -1,0 +1,25 @@
+.container {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  .authChoiceContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .authChoice {
+    display: flex;
+    width: 150px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    background: var(--Couleurs-neutres-light, #ecf7f4);
+  }
+}

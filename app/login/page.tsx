@@ -12,7 +12,7 @@ export default function register() {
       <Title iconUrl="icons/user.svg" text="LOGIN" />
       <LoginIllustration />
       <LoginForm />
-      <ConnectionWith authNature="login" />
+      <ConnectionWith />
       <TextAndRoute
         text="Don't have an account?"
         route="/register"

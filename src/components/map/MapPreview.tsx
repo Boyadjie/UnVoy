@@ -19,7 +19,7 @@ const recommendations = [
     title: 'Zerohachi Yakiniku restaurant OCAT',
     subTitle: 'La vraie viande grillée japonaise.',
     stars: 4.9,
-    likes: '97%',
+    likes: 0.97,
     imgUrl:
       '/images/map/recommendations/zerohachi_yakiniku_restaurant_ocat.jpg',
   },
@@ -27,14 +27,14 @@ const recommendations = [
     title: 'Hanasato KOBE',
     subTitle: 'Dégustez du boeuf Hida.',
     stars: 4.6,
-    likes: '92%',
+    likes: 0.92,
     imgUrl: '/images/map/recommendations/hanasato_kobe.jpg',
   },
   {
     title: 'Neiro',
     subTitle: 'La vraie viande grillée japonaise.',
     stars: 4.1,
-    likes: '95%',
+    likes: 0.95,
     imgUrl: '/images/map/recommendations/neiro.jpg',
   },
 ];

@@ -8,7 +8,6 @@ import {useRouter} from 'next/navigation';
 
 import {auth} from '../../firebase';
 import {Input} from './Inputs/InputManager';
-import styles from './styles/loginForm.module.css';
 
 type FormValues = {
   email: string;
@@ -53,37 +52,38 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <form onSubmit={handleSubmit} className={styles.formContainer}>
-        <Input
-          required={true}
-          type="email"
-          name="email"
-          placeholder="Mail address"
-          value={formValues.email}
-          onChange={handleInputChange}
-          startIconUrl="icons/mail.svg"
-        />
-        <div className={styles.gluedChilds}>
+    <div>
+      <div>
+        <h1>Login</h1>
+      </div>
+
+      <form onSubmit={handleSubmit}>
+        <div>
+          <Input
+            required={true}
+            type="email"
+            name="email"
+            placeholder="Mail address"
+            value={formValues.email}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
           <Input
             type="password"
             name="password"
             value={formValues.password}
             placeholder="Password"
             onChange={handleInputChange}
-            startIconUrl="icons/lock.svg"
-            endIconUrl={['icons/eye.svg', 'icons/eye-slash.svg']}
           />
-          <Link className={styles.forgotPassword} href="/forgotpassword">
-            Forgot Password?
-          </Link>
+        </div>
+        <div>
+          <Link href="/forgotpassword">Forgot Password?</Link>
         </div>
         <div id="formError">
           {responseErr ? 'Email or Password Invalid' : ''}
         </div>
-        <button className={styles.submitButton} type="submit">
-          Login
-        </button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

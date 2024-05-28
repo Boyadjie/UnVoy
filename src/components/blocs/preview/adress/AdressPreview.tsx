@@ -8,7 +8,7 @@ type AdressProps = {
   title: string;
   subTitle: string;
   stars: number;
-  likes: string;
+  likes: number;
   imgUrl: string;
 };
 
@@ -46,7 +46,8 @@ export const AdressPreview: React.FC<AdressProps> = ({
                 width={10}
                 height={10}
               />{' '}
-              {likes}
+              {likes * 100}
+              {'%'}
             </span>
           </div>
         </div>

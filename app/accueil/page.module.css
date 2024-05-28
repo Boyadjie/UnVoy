@@ -1,0 +1,26 @@
+#home {
+  .header {
+    background: var(--primary);
+
+    .navigation {
+      padding-inline: 35px;
+      padding-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .homeContentContainer {
+    padding: 50px 35px;
+
+    > div {
+      margin-bottom: 60px;
+    }
+  }
+}

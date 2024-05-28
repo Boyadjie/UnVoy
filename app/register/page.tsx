@@ -1,4 +1,3 @@
-'use client';
 import ConnectionWith from '../../src/components/authentication/ConnectionWith';
 import {RegisterForm} from '../../src/components/authentication/RegisterForm';
 import TextAndRoute from '../../src/components/authentication/TextAndRoute';
@@ -10,7 +9,7 @@ export default function register() {
     <div className={styles.container}>
       <Title iconUrl="icons/register.svg" text="REGISTER" />
       <RegisterForm />
-      <ConnectionWith authNature="register" />
+      <ConnectionWith />
       <TextAndRoute
         text="Already have an account?"
         route="/login"

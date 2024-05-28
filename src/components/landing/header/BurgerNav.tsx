@@ -10,11 +10,11 @@ import styles from './header.module.css';
 export const BurgerNav = () => {
   const [open, setOpen] = useState(true);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onClickHandler = async (e: any) => {
-    if (open) {
+  const onClickHandler = async (e: MouseEvent) => {
+    if (open && e.target instanceof HTMLImageElement) {
       e.target.style.transform = 'rotate(180deg)';
       e.target.style.transition = 'transform 0.3s';
-    } else {
+    } else if (e.target instanceof HTMLImageElement) {
       e.target.style.transform = 'rotate(0deg)';
       e.target.style.transition = 'transform 0.3s';
     }
@@ -27,7 +27,7 @@ export const BurgerNav = () => {
         alt="Burger Menu Icon"
         width={65}
         height={65}
-        onClick={(e) => onClickHandler(e)}
+        onClick={(e) => onClickHandler(e as unknown as MouseEvent)}
       />
       {!open ? (
         <div className={styles.burgerPopup}>
@@ -40,7 +40,7 @@ export const BurgerNav = () => {
           <Link href="/#contact" onClick={(e) => smoothScroll(e, 'contact')}>
             Nous contacter
           </Link>
-          <Link href="/Accueil">Découvrir</Link> {/* button */}
+          <Link href="/Accueil">Découvrir</Link>
         </div>
       ) : null}
     </div>

@@ -1,0 +1,7 @@
+.container {
+  padding: 0 2rem;
+  p {
+    font-size: 14px;
+    color: #1b1b2e;
+  }
+}

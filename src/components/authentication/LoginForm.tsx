@@ -8,6 +8,7 @@ import {useRouter} from 'next/navigation';
 
 import {auth} from '../../firebase';
 import {Input} from './Inputs/InputManager';
+import styles from './styles/loginForm.module.css';
 
 type FormValues = {
   email: string;
@@ -42,7 +43,6 @@ export const LoginForm: React.FC = () => {
       return;
     }
 
-    // move logic to back end file useing next.js api routes
     signInWithEmailAndPassword(auth, formValues.email, formValues.password)
       .then(() => {
         router.push('/accueil', {scroll: false});
@@ -53,39 +53,37 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <div>
-      <div>
-        {/* use image from next */}
-        <h1>Login</h1>
-      </div>
-
-      <form onSubmit={handleSubmit}>
-        <div>
-          <Input
-            required={true}
-            type="email"
-            name="email"
-            placeholder="Mail address"
-            value={formValues.email}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit} className={styles.formContainer}>
+        <Input
+          required={true}
+          type="email"
+          name="email"
+          placeholder="Mail address"
+          value={formValues.email}
+          onChange={handleInputChange}
+          startIconUrl="icons/mail.svg"
+        />
+        <div className={styles.gluedChilds}>
           <Input
             type="password"
             name="password"
             value={formValues.password}
             placeholder="Password"
             onChange={handleInputChange}
+            startIconUrl="icons/lock.svg"
+            endIconUrl={['icons/eye.svg', 'icons/eye-slash.svg']}
           />
-        </div>
-        <div>
-          <Link href="/forgotpassword">Forgot Password?</Link>
+          <Link className={styles.forgotPassword} href="/forgotpassword">
+            Forgot Password?
+          </Link>
         </div>
         <div id="formError">
           {responseErr ? 'Email or Password Invalid' : ''}
         </div>
-        <button type="submit">Submit</button>
+        <button className={styles.submitButton} type="submit">
+          Login
+        </button>
       </form>
     </div>
   );

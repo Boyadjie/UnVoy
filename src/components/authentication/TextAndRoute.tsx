@@ -1,14 +1,15 @@
+'use client';
 import React from 'react';
 
 import {useRouter} from 'next/navigation';
 
 import styles from './styles/textAndRoute.module.css';
 
-interface TextAndRouteProps {
+type TextAndRouteProps = {
   text: string;
   route: string;
   routeText: string;
-}
+};
 
 const TextAndRoute: React.FC<TextAndRouteProps> = ({
   text,

@@ -12,7 +12,6 @@ type MemberTypes = {
 };
 
 export const Member = ({name, post, profilePicture}: MemberTypes) => {
-  const [, setVw] = useState(0);
   const [memberSideLenght, setMemberSideLenght] = useState(0);
 
   useEffect(() => {
@@ -21,7 +20,6 @@ export const Member = ({name, post, profilePicture}: MemberTypes) => {
         document.documentElement.clientWidth || 0,
         window.innerWidth || 0,
       );
-      setVw(newVw);
       if (newVw < 768) {
         setMemberSideLenght(newVw / 2);
       } else {

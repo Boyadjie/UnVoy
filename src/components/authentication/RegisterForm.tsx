@@ -16,6 +16,51 @@ type FormValues = {
   username: string;
 };
 
+type FormErrors = {
+  email?: string;
+  password?: string;
+  passwordConfirm?: string;
+  username?: string;
+};
+
+const validateForm = (formValues: FormValues): true | FormErrors => {
+  const errors: FormErrors = {};
+
+  if (formValues.email.length === 0) {
+    errors.email = 'Email is required';
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) {
+    errors.email = 'Please enter a valid email address';
+  }
+
+  if (formValues.password.length < 1) {
+    errors.password = 'Password is required';
+  } else if (formValues.password.length < 8) {
+    errors.password = 'Password must be at least 8 characters';
+  } else if (!/[0-9]/.test(formValues.password)) {
+    errors.password = 'Password must contain at least 1 number';
+  } else if (!/[a-zA-Z]/.test(formValues.password)) {
+    errors.password = 'Password must contain at least 1 letter';
+  }
+
+  if (formValues.passwordConfirm.length < 1) {
+    errors.passwordConfirm = 'Confirmation is required';
+  } else if (formValues.password !== formValues.passwordConfirm) {
+    errors.passwordConfirm = 'Passwords are not the same';
+  }
+
+  if (formValues.username.length === 0) {
+    errors.username = 'Username is required';
+  } else if (formValues.username.length < 4) {
+    errors.username = 'Username must be at least 4 characters';
+  }
+
+  if (Object.keys(errors).length === 0) {
+    return true;
+  }
+
+  return errors;
+};
+
 export const RegisterForm: React.FC = () => {
   const [success, setSuccess] = useState<boolean>(false);
   const [formValues, setFormValues] = useState<FormValues>({
@@ -24,16 +69,7 @@ export const RegisterForm: React.FC = () => {
     passwordConfirm: '',
     username: '',
   });
-
-  const isEmptyMail = formValues.email.length === 0;
-  const isEmptyPasswords =
-    formValues.password.length < 1 || formValues.passwordConfirm.length < 1;
-  const isEmptyUsername = formValues.username.length === 0;
-  const isValideUsername = formValues.username.length > 3;
-  const isValidMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email);
-  const isSamePassword =
-    formValues.password === formValues.passwordConfirm && !isEmptyPasswords;
-  const isValidPassword = formValues.password.length >= 8;
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
 
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -48,29 +84,32 @@ export const RegisterForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (
-      !isValideUsername ||
-      isEmptyUsername ||
-      !isValidMail ||
-      !isSamePassword ||
-      !isValidPassword ||
-      isEmptyPasswords ||
-      isEmptyMail
-    ) {
-      return;
-    }
 
-    // move logic to back end file useing next.js api routes
-    createUserWithEmailAndPassword(auth, formValues.email, formValues.password)
-      .then(() => {
-        setSuccess(true);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // eslint-disable-next-line no-console
-        console.log(errorCode, errorMessage);
-      });
+    const validationResult = validateForm(formValues);
+
+    if (validationResult === true) {
+      createUserWithEmailAndPassword(
+        auth,
+        formValues.email,
+        formValues.password,
+      )
+        .then(() => {
+          setSuccess(true);
+        })
+        .catch((error) => {
+          if (error.code === 'auth/email-already-in-use') {
+            setFormErrors({email: 'Email already in use'});
+          }
+          setFormValues({
+            email: '',
+            password: '',
+            passwordConfirm: '',
+            username: '',
+          });
+        });
+    } else {
+      setFormErrors(validationResult);
+    }
   };
 
   return (
@@ -114,23 +153,12 @@ export const RegisterForm: React.FC = () => {
         />
         <div id="formError">
           <ul>
-            {!isValideUsername && !isEmptyUsername && (
-              <li>Username must be at least 4 characters</li>
+            {formErrors.email && <li>{formErrors.email}</li>}
+            {formErrors.password && <li>{formErrors.password}</li>}
+            {formErrors.passwordConfirm && (
+              <li>{formErrors.passwordConfirm}</li>
             )}
-            {!isValidMail && !isEmptyMail && (
-              <li>Please enter a valid email address</li>
-            )}
-            {!isSamePassword && !isEmptyPasswords && (
-              <li>Passwords are not the same</li>
-            )}
-            {!isValidPassword && !isEmptyPasswords && (
-              <li>
-                password must be:
-                <ul>at least 8 characters</ul>
-                <ul>contain at least 1 number</ul>
-                <ul>contain at least 1 letter</ul>
-              </li>
-            )}
+            {formErrors.username && <li>{formErrors.username}</li>}
           </ul>
         </div>
         <button className={styles.submitButton} type="submit">

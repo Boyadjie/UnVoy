@@ -2,7 +2,7 @@
 import React, {createContext, useState, useContext, useEffect} from 'react';
 
 import {User} from 'firebase/auth';
-import {onAuthStateChanged, signOut} from 'firebase/auth';
+import {onAuthStateChanged} from 'firebase/auth';
 import {useRouter, usePathname} from 'next/navigation';
 
 import {auth as fireAuth} from '../firebase';

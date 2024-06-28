@@ -1,8 +1,14 @@
 'use client';
+
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 import {Navbar} from '../../src/components/navbar/Navbar';
 import styles from './page.module.css';
+const DynamicMapComponent = dynamic(
+  () => import('../../src/components/map/MapComponent'),
+  {ssr: false},
+);
 
 export default function Map() {
   return (
@@ -14,7 +20,7 @@ export default function Map() {
             <div className={styles.layoutTitles}>
               <h3 className={styles.layoutTitle}>MAP</h3>
               <p className={styles.layoutSubTitle}>
-                {"Mon trajet vers l'aeroport"}
+                {'Logement vers aeroport'}
               </p>
             </div>
             <div className={styles.layoutMenu}>
@@ -37,7 +43,9 @@ export default function Map() {
             </div>
           </div>
         </section>
-        <div className={styles.mapContentContainer}></div>
+        <div className={styles.mapContentContainer}>
+          <DynamicMapComponent />
+        </div>
       </div>
     </>
   );

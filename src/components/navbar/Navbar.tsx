@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <ul>
-        <a href="">
+        <a href="/accueil">
           <li>
             <Image
               src="/icons/nav/home.svg"
@@ -16,7 +16,7 @@ export const Navbar = () => {
             />
           </li>
         </a>
-        <a href="">
+        <a href="/articles">
           <li>
             <Image
               src="/icons/nav/articles.svg"

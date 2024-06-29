@@ -1,0 +1,30 @@
+.articleListContainer {
+  padding: 35px;
+  margin-bottom: 60px;
+
+  h1 {
+    color: var(--primary);
+    font-size: 24px;
+  }
+
+  .selectCategory {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 5px 10px;
+    margin: 25px 0;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+
+    label {
+      font-size: 10px;
+      padding: 4px 8px;
+      border: none;
+
+      &.inputs_checked__KG2p6 {
+        background: var(--primary-light);
+      }
+    }
+  }
+}

@@ -1,16 +1,7 @@
 import {useEffect, useState} from 'react';
 
+import {ArticleDb} from '../types/Article';
 import {useFirestore} from './useFirestore';
-
-type ArticleDb = {
-  date: string;
-  rate: number;
-  title: string;
-  content: {
-    subtitle: string;
-    content: string[];
-  }[];
-};
 
 type CategorisedArticles = {
   decouverte: ArticleDb[];

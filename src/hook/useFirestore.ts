@@ -7,7 +7,7 @@ import {
   DocumentData as FirebaseDocumentData,
 } from 'firebase/firestore';
 
-import {db} from '../../FirebaseConfig';
+import {db} from '../firebase';
 
 interface DocumentData {
   id: string;

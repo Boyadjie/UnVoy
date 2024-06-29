@@ -2,7 +2,7 @@
 import {useState} from 'react';
 
 import {ArticlesList} from '../../src/components/articles/articlesList/ArticlesList';
-import {Loader} from '../../src/components/decorations/loader';
+import {Loader} from '../../src/components/decorations/Loader';
 import {InputRadio} from '../../src/components/Form/Inputs/InputRadio';
 import {Navbar} from '../../src/components/navbar/Navbar';
 import {useArticles} from '../../src/hook/useArticles';

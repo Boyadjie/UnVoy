@@ -12,11 +12,11 @@ export const ArticlesList: React.FC<{articles: ArticleDb[]}> = ({articles}) => {
           const formatedDate = new Date(date);
           const formatedTitleImg = title
             .toLowerCase()
-            .replaceAll(': ', '')
-            .replaceAll(' ?', '')
-            .replaceAll('’', '_')
-            .replaceAll('&', 'et')
-            .replaceAll(' ', '_');
+            .replace(': ', '')
+            .replace(' ?', '')
+            .replace('’', '_')
+            .replace('&', 'et')
+            .replace(' ', '_');
 
           return (
             <div key={index} className={styles.card}>

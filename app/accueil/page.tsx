@@ -6,30 +6,8 @@ import {MapPreview} from '../../src/components/map/MapPreview';
 import {Navbar} from '../../src/components/navbar/Navbar';
 import {Onboarding} from '../../src/components/onboarding/Onboarding';
 import {Profile} from '../../src/components/profile/Profile';
+import {actus, articles} from '../../src/data/homePage';
 import styles from './page.module.css';
-
-const tempData = [
-  {
-    title: 'Préparer son voyage en 5 étapes',
-    date: new Date('2024-06-05'),
-    pictureUrl: '/user.jpg',
-  },
-  {
-    title: 'Vie locale : conseils pratiques',
-    date: new Date('2024-11-09'),
-    pictureUrl: '/user.jpg',
-  },
-  {
-    title: 'Où manger local ?',
-    date: new Date('2024-03-01'),
-    pictureUrl: '/user.jpg',
-  },
-  {
-    title: 'Transports et déplacements',
-    date: new Date('2024-03-23'),
-    pictureUrl: '/user.jpg',
-  },
-];
 
 export default function Home() {
   return (
@@ -61,10 +39,10 @@ export default function Home() {
         <div className={styles.homeContentContainer}>
           <Slider
             title="Articles conseillés"
-            items={tempData}
-            link="/accueil#"
+            items={articles}
+            link="/articles"
           />
-          <Slider title="Actualités" items={tempData} link="/accueil#" />
+          <Slider title="Actualités" items={actus} link="/accueil#" />
           <MapPreview />
         </div>
       </div>

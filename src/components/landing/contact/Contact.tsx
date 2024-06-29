@@ -21,7 +21,7 @@ export const Contact = () => {
               </>
             );
           })}
-          <PrimaryButton url="/Acceuil">Je veux l'application</PrimaryButton>
+          <PrimaryButton url="/accueil">Je veux l'application</PrimaryButton>
         </div>
       </div>
     </section>

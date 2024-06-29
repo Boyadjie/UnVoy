@@ -1,0 +1,17 @@
+.articlesList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  .card {
+    padding: 10px;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+  }
+}
+
+.length {
+  color: #7f7f7f;
+  font-size: 14px;
+  padding-bottom: 10px;
+}

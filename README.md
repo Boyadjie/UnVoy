@@ -4,12 +4,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+When you have cloned the project you can start working.
+
 To work on this project, you firstly need to install the dependecies:
 
 ```bash
 npm i
-# or
-yarn install
 # or
 pnpm i
 ```
@@ -19,10 +19,10 @@ Then, you can start the dev server:
 ```bash
 npm run dev
 # or
-yarn dev
-# or
 pnpm dev
 ```
+
+They are other scripts availables for build and tests, you can check them on the `package.json`.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

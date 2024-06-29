@@ -1,10 +1,7 @@
 import {initializeApp} from 'firebase/app';
 import {getAuth} from 'firebase/auth';
-<<<<<<< HEAD:src/firebase.js
-=======
 import {getFirestore} from 'firebase/firestore';
 import {getMessaging} from 'firebase/messaging';
->>>>>>> ae9db35 (feat(#60): get data from firebase):FirebaseConfig.tsx
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDWUJUeTeCMe8m32k-s6ti28bvNmg8KJc0',
@@ -18,12 +15,8 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 
-<<<<<<< HEAD:src/firebase.js
-export const auth = getAuth(app);
-=======
 export const db = getFirestore();
 
 // Initialize Firebase Auth, Cloud Messaging, etc...
 export const auth = getAuth(app);
 export const messaging = getMessaging(app);
->>>>>>> ae9db35 (feat(#60): get data from firebase):FirebaseConfig.tsx

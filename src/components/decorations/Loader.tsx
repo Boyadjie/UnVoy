@@ -4,7 +4,7 @@ export const Loader = () => {
       <circle
         fill="#00969F"
         stroke="#00969F"
-        stroke-width="15"
+        strokeWidth="15"
         r="15"
         cx="40"
         cy="100"
@@ -22,7 +22,7 @@ export const Loader = () => {
       <circle
         fill="#00969F"
         stroke="#00969F"
-        stroke-width="15"
+        strokeWidth="15"
         r="15"
         cx="100"
         cy="100"
@@ -40,7 +40,7 @@ export const Loader = () => {
       <circle
         fill="#00969F"
         stroke="#00969F"
-        stroke-width="15"
+        strokeWidth="15"
         r="15"
         cx="160"
         cy="100"

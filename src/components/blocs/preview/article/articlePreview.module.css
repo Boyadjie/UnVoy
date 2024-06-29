@@ -6,19 +6,11 @@
     width: 100%;
 
     .imageContainer {
-      position: relative;
       width: 100%;
-      overflow: hidden;
-      border-radius: 5px;
 
       > img {
-        position: absolute;
-        aspect-ratio: 16 / 9;
         width: 100%;
         height: auto;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
       }
     }
 
@@ -39,9 +31,17 @@
     position: relative;
     width: 125px;
     height: 125px;
+    overflow: hidden;
+    border-radius: 5px;
 
     > img {
-      border-radius: 5px;
+      position: absolute;
+      aspect-ratio: 16 / 9;
+      width: auto;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .rate {

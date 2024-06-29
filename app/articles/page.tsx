@@ -2,6 +2,7 @@
 import {useState} from 'react';
 
 import {ArticlesList} from '../../src/components/articles/articlesList/ArticlesList';
+import {Loader} from '../../src/components/decorations/loader';
 import {InputRadio} from '../../src/components/Form/Inputs/InputRadio';
 import {Navbar} from '../../src/components/navbar/Navbar';
 import {useArticles} from '../../src/hook/useArticles';
@@ -41,7 +42,11 @@ export default function Articles() {
           ))}
         </div>
 
-        {loading && 'Loading ...'}
+        {loading && (
+          <div className={styles.loader}>
+            <Loader />
+          </div>
+        )}
         {!loading && categories && (
           <ArticlesList articles={categories[selectedCategory]} />
         )}

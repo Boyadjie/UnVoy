@@ -9,11 +9,16 @@ type CategorisedArticles = {
   expert: ArticleDb[];
 };
 
-type ArticleList = {data: string; category: string; id: number}[];
+type ArticleList = {data: string; category: string; id: string}[];
 
 const formatArticleList = (dataList: ArticleList) => {
   const formatedList = dataList.map((data) => {
-    return JSON.parse(data.data) as ArticleDb;
+    const parsedData = JSON.parse(data.data);
+    const formatedArticle: ArticleDb = {
+      id: data.id,
+      ...parsedData,
+    };
+    return formatedArticle;
   });
 
   return formatedList;
@@ -21,6 +26,7 @@ const formatArticleList = (dataList: ArticleList) => {
 
 export const useArticles = () => {
   const articlesData = useFirestore('articles');
+
   const [categorisedArticles, setCategorisedArticles] =
     useState<CategorisedArticles>();
 

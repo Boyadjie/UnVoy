@@ -7,6 +7,7 @@ export type ArticleProps = {
 };
 
 export type ArticleDb = {
+  id: string;
   date: string;
   rate: number;
   title: string;

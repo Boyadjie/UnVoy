@@ -68,4 +68,21 @@
     left: 0;
     z-index: 0;
   }
+
+  .input {
+    height: 44px;
+    border-radius: 25px;
+    border: 1px solid var(--primary);
+    padding: 0 20px;
+    width: 75%;
+  }
+
+  .goButton {
+    background-color: var(--primary);
+    color: white;
+    height: 44px;
+    border-radius: 25px;
+    border: none;
+    width: 20%;
+  }
 }

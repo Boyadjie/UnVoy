@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: pnpm/action-setup@v2.4.0
+      - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: 9
+          version: 8
       - uses: actions/setup-node@main
         with:
           cache: pnpm
-      - run: pnpm install --frozen-lockfile --prefer-offline
+      - run: pnpm install
       - run: pnpm run test
 
   format:
@@ -26,14 +26,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: pnpm/action-setup@v2.4.0
+      - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: 9
+          version: 8
       - uses: actions/setup-node@main
         with:
           cache: pnpm
-      - run: pnpm install --frozen-lockfile --prefer-offline
+      - run: pnpm install
       - run: pnpm prettier --check .
 
   nextjs:
@@ -41,12 +41,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: pnpm/action-setup@v2.4.0
+      - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: 9
+          version: 8
       - uses: actions/setup-node@main
         with:
           cache: pnpm
-      - run: pnpm install --frozen-lockfile --prefer-offline
+      - run: pnpm install
       - run: pnpm build
